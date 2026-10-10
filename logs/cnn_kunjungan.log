@@ -1,0 +1,26 @@
+Kasus EKG kunjungan 0-24 jam sebelum ROSC: 220 EKG, 220 pasien; kontrol EKG indeks: 9976
+Jam sebelum ROSC (kasus): {Interval(0, 1, closed='right'): 84, Interval(1, 4, closed='right'): 64, Interval(4, 24, closed='right'): 72}
+Tahun kasus: {'2011-14': 82, '2015-16': 46, '2017': 35, '2018': 28, '2019': 29}
+Ukuran 12SL hilang: 0.000
+
+K EKG kunjungan IGD: kasus (0-24 jam sebelum ROSC) lawan kontrol EKG indeks
+  usia + jenis kelamin (LR)              AUC 0.565 [0.526, 0.604]   n=220/9976   (0 menit)
+  laju ventrikel saja (HGB)              AUC 0.624 [0.583, 0.665]   n=220/9976   (1 menit)
+  ukuran 12SL (HGB)                      AUC 0.743 [0.711, 0.773]   n=220/9976   (1 menit)
+  ukuran 12SL + usia/jk (HGB)            AUC 0.746 [0.715, 0.774]   n=220/9976   (1 menit)
+  ciri sinyal sederhana (HGB)            AUC 0.754 [0.716, 0.792]   n=220/9976   (1 menit)
+  CNN 12 sadapan (3 ulangan)             AUC 0.797 [0.765, 0.828]   n=220/9976
+  CNN + usia/jk (LR atas logit OOF)      AUC 0.796 [0.762, 0.828]   n=220/9976
+
+Pengganggu: prediksi CNN yang sama, subset kasus lawan semua kontrol
+  <= 1 jam sebelum ROSC                  AUC 0.879 [0.845, 0.913]   n=84/9976
+  1-4 jam                                AUC 0.764 [0.710, 0.817]   n=64/9976
+  4-24 jam                               AUC 0.729 [0.661, 0.795]   n=72/9976
+  > 1 jam                                AUC 0.746 [0.703, 0.788]   n=136/9976
+  kasus 2015-2019 saja                   AUC 0.776 [0.731, 0.819]   n=138/9976
+  usia + jk, > 1 jam                     AUC 0.538 [0.491, 0.587]   n=136/9976
+  usia + jk, 4-24 jam                    AUC 0.535 [0.471, 0.598]   n=72/9976
+
+Titik operasi CNN (semua kasus)
+  spesifisitas 0.90: sensitivitas 0.500
+  spesifisitas 0.95: sensitivitas 0.336

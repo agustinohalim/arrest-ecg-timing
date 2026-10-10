@@ -1,0 +1,5 @@
+Kasus [0]pre per lokasi: {'IHCA': 334, 'OHCA': 241, 'Other': 29, '0': 1}
+Kasus > 1 jam: 111; diambil 51 secara acak, 3 kali; CNN 1 ulangan
+  acak 0: CNN 0.652 [0.562, 0.741]  n=51/9976
+  acak 1: CNN 0.728 [0.649, 0.799]  n=51/9976
+  acak 2: CNN 0.649 [0.553, 0.737]  n=51/9976

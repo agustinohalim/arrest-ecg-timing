@@ -1,0 +1,28 @@
+Kasus [0]pre per lokasi: {'IHCA': 334, 'OHCA': 241, 'Other': 29, '0': 1}
+Kasus (IHCA, EKG setelah datang dan 0-24 jam sebelum CPR): 178 EKG, 178 pasien; kontrol EKG indeks: 9976
+Jam sebelum kejadian (kasus): {Interval(0, 1, closed='right'): 67, Interval(1, 4, closed='right'): 49, Interval(4, 24, closed='right'): 62}
+Jam setelah datang (kasus): median 0.75, p75 5.65
+Tahun kasus: {'2011-14': 72, '2015-16': 40, '2017': 26, '2018': 22, '2019': 18}
+Ukuran 12SL hilang: 0.000
+
+K EKG kunjungan IGD: kasus lawan kontrol EKG indeks
+  usia + jenis kelamin (LR)              AUC 0.567 [0.527, 0.609]   n=178/9976   (0 menit)
+  laju ventrikel saja (HGB)              AUC 0.614 [0.569, 0.658]   n=178/9976   (1 menit)
+  ukuran 12SL (HGB)                      AUC 0.694 [0.654, 0.729]   n=178/9976   (1 menit)
+  ukuran 12SL + usia/jk (HGB)            AUC 0.708 [0.671, 0.744]   n=178/9976   (1 menit)
+  ciri sinyal sederhana (HGB)            AUC 0.719 [0.678, 0.758]   n=178/9976   (1 menit)
+  CNN 12 sadapan (3 ulangan)             AUC 0.791 [0.757, 0.826]   n=178/9976
+  CNN + usia/jk (LR atas logit OOF)      AUC 0.789 [0.750, 0.824]   n=178/9976
+
+Pengganggu: prediksi out-of-fold yang sama, subset kasus lawan semua kontrol
+  subset kasus                           CNN                      usia + jk                n
+  <= 1 jam sebelum kejadian              0.858 [0.811, 0.899]     0.551 [0.485, 0.616]     67
+  1-4 jam                                0.769 [0.697, 0.833]     0.568 [0.491, 0.644]     49
+  4-24 jam                               0.737 [0.667, 0.806]     0.591 [0.517, 0.665]     62
+  > 1 jam                                0.751 [0.704, 0.796]     0.581 [0.527, 0.641]     111
+  kasus 2015-2019 saja                   0.777 [0.720, 0.826]     0.544 [0.487, 0.596]     106
+  mirip triase (<=1 j datang, >1 j CPR)  0.755 [0.675, 0.824]     0.585 [0.494, 0.672]     51
+
+Titik operasi CNN (semua kasus)
+  spesifisitas 0.90: sensitivitas 0.433
+  spesifisitas 0.95: sensitivitas 0.320

@@ -1,0 +1,10 @@
+EKG pre: kasus 605, kontrol 6410
+
+M jarak disamakan (kasus > 1 hari, kontrol 2015-17 per pita, 1:5)
+  median jarak kasus 78 hari, kontrol 86 hari
+  jarak saja (HGB)                       AUC 0.513 [0.483, 0.543]   n=381/1905   (0 menit)
+  usia + jenis kelamin (LR)              AUC 0.540 [0.510, 0.572]   n=381/1905   (0 menit)
+  ciri sinyal sederhana (HGB)            AUC 0.531 [0.500, 0.566]   n=381/1905   (1 menit)
+  CNN 12 sadapan                         AUC 0.540 [0.506, 0.574]   n=381/1905   (9 menit)
+
+A pembanding atas: [1]ROSC lawan control

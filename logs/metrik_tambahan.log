@@ -1,0 +1,28 @@
+EKG: 10154, kasus 178, prevalensi 0.0175
+
+Diskriminasi (semua kasus bersih)
+  AUROC  0.791 [0.756, 0.826]
+  AUPRC  0.091 [0.065, 0.130]   (prevalensi 0.0175)
+
+Kalibrasi
+  CNN mentah        Brier 0.0707  intersep -3.10  lereng 0.40  rerata prediksi 0.140
+  sesudah Platt CV  Brier 0.0166  intersep -0.03  lereng 0.99  rerata prediksi 0.0175  (Brier prevalensi saja 0.0172)
+  desil prediksi Platt: rerata prediksi / proporsi kasus
+    0: 0.0006 / 0.0049  (n=1016)
+    1: 0.0018 / 0.0039  (n=1015)
+    2: 0.0034 / 0.0030  (n=1015)
+    3: 0.0055 / 0.0049  (n=1016)
+    4: 0.0082 / 0.0059  (n=1015)
+    5: 0.0121 / 0.0089  (n=1015)
+    6: 0.0175 / 0.0128  (n=1016)
+    7: 0.0251 / 0.0167  (n=1015)
+    8: 0.0351 / 0.0384  (n=1015)
+    9: 0.0658 / 0.0758  (n=1016)
+
+Kepekaan (kasus terpilih lawan semua kontrol)
+  buang <= 15 menit sebelum CPR            AUROC 0.768 [0.728, 0.808]  AUPRC 0.056 [0.042, 0.084]  n=152
+  buang <= 15 menit, kasus 2015-2019       AUROC 0.741 [0.682, 0.795]  AUPRC 0.039 [0.024, 0.079]  n=88
+
+Titik operasi CNN (prevalensi kohort; PPV bergantung prevalensi)
+  spesifisitas 0.90: sensitivitas 0.433  PPV 0.072  yang ditandai per 1.000 EKG 106
+  spesifisitas 0.95: sensitivitas 0.320  PPV 0.103  yang ditandai per 1.000 EKG 55

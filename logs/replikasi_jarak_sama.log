@@ -1,0 +1,42 @@
+Kontrol pre 30-730 hari, 2015-2017: 2226
+Isi kasus R0 (220): OHCA 24, EKG pada/sesudah awal CPR 18, sebelum kedatangan 14, bersih 178
+R1m kasus 1-30 hari, kontrol 1-30 hari: calon kontrol 692
+R2m kasus 30-365 hari, kontrol 30-365 hari: calon kontrol 1700
+
+R1m kasus 1-30 hari, kontrol 1-30 hari, benih 0: median usia kasus 71, kontrol 70
+  usia + jenis kelamin (LR)              AUC 0.444 [0.387, 0.501]   n=120/548   (0 menit)
+  ciri sinyal sederhana (HGB)            AUC 0.453 [0.393, 0.510]   n=120/548   (0 menit)
+  CNN 12 sadapan                         AUC 0.506 [0.447, 0.563]   n=120/548   (2 menit)
+
+R1m kasus 1-30 hari, kontrol 1-30 hari, benih 1: median usia kasus 71, kontrol 70
+  usia + jenis kelamin (LR)              AUC 0.483 [0.425, 0.544]   n=120/548   (0 menit)
+  ciri sinyal sederhana (HGB)            AUC 0.480 [0.423, 0.538]   n=120/548   (0 menit)
+  CNN 12 sadapan                         AUC 0.543 [0.483, 0.600]   n=120/548   (2 menit)
+
+R1m kasus 1-30 hari, kontrol 1-30 hari, benih 2: median usia kasus 71, kontrol 70
+  usia + jenis kelamin (LR)              AUC 0.468 [0.406, 0.525]   n=120/548   (0 menit)
+  ciri sinyal sederhana (HGB)            AUC 0.475 [0.418, 0.538]   n=120/548   (0 menit)
+  CNN 12 sadapan                         AUC 0.509 [0.456, 0.563]   n=120/548   (2 menit)
+
+R2m kasus 30-365 hari, kontrol 30-365 hari, benih 0: median usia kasus 70, kontrol 70
+  usia + jenis kelamin (LR)              AUC 0.467 [0.424, 0.511]   n=175/862   (0 menit)
+  ciri sinyal sederhana (HGB)            AUC 0.509 [0.461, 0.557]   n=175/862   (0 menit)
+  CNN 12 sadapan                         AUC 0.532 [0.486, 0.579]   n=175/862   (4 menit)
+
+R2m kasus 30-365 hari, kontrol 30-365 hari, benih 1: median usia kasus 70, kontrol 70
+  usia + jenis kelamin (LR)              AUC 0.439 [0.397, 0.489]   n=175/862   (0 menit)
+  ciri sinyal sederhana (HGB)            AUC 0.555 [0.512, 0.600]   n=175/862   (0 menit)
+  CNN 12 sadapan                         AUC 0.499 [0.449, 0.550]   n=175/862   (3 menit)
+
+R2m kasus 30-365 hari, kontrol 30-365 hari, benih 2: median usia kasus 70, kontrol 70
+  usia + jenis kelamin (LR)              AUC 0.450 [0.405, 0.501]   n=175/862   (0 menit)
+  ciri sinyal sederhana (HGB)            AUC 0.539 [0.487, 0.590]   n=175/862   (0 menit)
+  CNN 12 sadapan                         AUC 0.515 [0.468, 0.560]   n=175/862   (3 menit)
+
+Rekap atas 3 benih pencocokan: rerata AUC [min, maks]
+  R1m kasus 1-30 hari, kontrol 1-30 hari   usia + jenis kelamin (LR)    0.465 [0.444, 0.483]
+  R1m kasus 1-30 hari, kontrol 1-30 hari   ciri sinyal sederhana (HGB)  0.469 [0.453, 0.480]
+  R1m kasus 1-30 hari, kontrol 1-30 hari   CNN 12 sadapan               0.519 [0.506, 0.543]
+  R2m kasus 30-365 hari, kontrol 30-365 hari usia + jenis kelamin (LR)    0.452 [0.439, 0.467]
+  R2m kasus 30-365 hari, kontrol 30-365 hari ciri sinyal sederhana (HGB)  0.534 [0.509, 0.555]
+  R2m kasus 30-365 hari, kontrol 30-365 hari CNN 12 sadapan               0.516 [0.499, 0.532]

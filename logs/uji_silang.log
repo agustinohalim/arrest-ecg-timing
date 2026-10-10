@@ -1,0 +1,42 @@
+== 1. Uji silang di dalam PEA/asistol
+    nol permutasi dalam set jantung, PEA/asistol pembacaan mesin (HGB)        rerata 0.494, p95 0.560, p 0.010
+    nol permutasi dalam set jantung, PEA/asistol ciri sinyal sederhana (HGB)  rerata 0.494, p95 0.572, p 0.287
+  jantung, PEA/asistol                         n=70   pembacaan mesin (HGB)        0.641 [0.636, 0.644]  benih 0 0.636 [0.557, 0.707]
+  jantung, PEA/asistol                         n=70   ciri sinyal sederhana (HGB)  0.551 [0.523, 0.574]  benih 0 0.523 [0.447, 0.598]
+    nol permutasi dalam set bukan jantung (tanpa unknown), PEA/asistol pembacaan mesin (HGB)        rerata 0.500, p95 0.546, p 0.208
+    nol permutasi dalam set bukan jantung (tanpa unknown), PEA/asistol ciri sinyal sederhana (HGB)  rerata 0.499, p95 0.544, p 0.653
+  bukan jantung (tanpa unknown), PEA/asistol   n=186  pembacaan mesin (HGB)        0.528 [0.526, 0.532]  benih 0 0.527 [0.484, 0.573]
+  bukan jantung (tanpa unknown), PEA/asistol   n=186  ciri sinyal sederhana (HGB)  0.482 [0.468, 0.488]  benih 0 0.488 [0.442, 0.537]
+  selisih jantung - bukan jantung di PEA/asistol | pembacaan mesin (HGB)        +0.113 [0.022, 0.201]  P(<=0) 0.007
+  selisih jantung - bukan jantung di PEA/asistol | ciri sinyal sederhana (HGB)  +0.070 [-0.033, 0.170]  P(<=0) 0.093
+
+== 2. Sebab unknown
+  sebab jantung                                n=104  pembacaan mesin (HGB)        0.640 [0.627, 0.655]  benih 0 0.655 [0.600, 0.711]
+  sebab jantung                                n=104  ciri sinyal sederhana (HGB)  0.601 [0.587, 0.612]  benih 0 0.612 [0.556, 0.665]
+  bukan jantung tanpa unknown                  n=200  pembacaan mesin (HGB)        0.515 [0.510, 0.523]  benih 0 0.510 [0.471, 0.550]
+  bukan jantung tanpa unknown                  n=200  ciri sinyal sederhana (HGB)  0.489 [0.474, 0.496]  benih 0 0.496 [0.452, 0.536]
+  jantung + unknown                            n=120  pembacaan mesin (HGB)        0.664 [0.657, 0.671]  benih 0 0.671 [0.617, 0.720]
+  jantung + unknown                            n=120  ciri sinyal sederhana (HGB)  0.598 [0.589, 0.605]  benih 0 0.605 [0.552, 0.663]
+  jantung - bukan jantung (unknown keluar)   | pembacaan mesin (HGB)        +0.125 [0.052, 0.200]  P(<=0) 0.000
+  jantung+unknown - bukan jantung            | pembacaan mesin (HGB)        +0.149 [0.080, 0.218]  P(<=0) 0.000
+  jantung - bukan jantung (unknown keluar)   | ciri sinyal sederhana (HGB)  +0.112 [0.036, 0.189]  P(<=0) 0.002
+  jantung+unknown - bukan jantung            | ciri sinyal sederhana (HGB)  +0.110 [0.035, 0.189]  P(<=0) 0.002
+
+== 3. VT/VF: nol permutasi dalam set
+    nol permutasi dalam set irama VT/VF pembacaan mesin (HGB)        rerata 0.490, p95 0.589, p 0.020
+    nol permutasi dalam set irama VT/VF ciri sinyal sederhana (HGB)  rerata 0.486, p95 0.612, p 0.020
+  irama VT/VF                                  n=39   pembacaan mesin (HGB)        0.645 [0.645, 0.645]  benih 0 0.645 [0.558, 0.727]
+  irama VT/VF                                  n=39   ciri sinyal sederhana (HGB)  0.702 [0.702, 0.702]  benih 0 0.702 [0.608, 0.782]
+
+== 4. CNN - pembacaan mesin berpasangan (benih 0, bootstrap set)
+  semua sebab                                  n=320  pembacaan mesin (HGB)        0.525 [0.520, 0.534]  benih 0 0.521 [0.485, 0.558]
+  semua sebab                                  n=320  ciri sinyal sederhana (HGB)  0.519 [0.505, 0.533]  benih 0 0.505 [0.471, 0.540]
+  semua sebab: CNN 0.532 - pembacaan mesin 0.521 = +0.011 [-0.034, 0.053]  P(<=0) 0.327
+  sebab jantung                                n=104  pembacaan mesin (HGB)        0.640 [0.627, 0.655]  benih 0 0.655 [0.600, 0.708]
+  sebab jantung                                n=104  ciri sinyal sederhana (HGB)  0.601 [0.587, 0.612]  benih 0 0.612 [0.558, 0.671]
+  sebab jantung: CNN 0.637 - pembacaan mesin 0.655 = -0.018 [-0.085, 0.052]  P(<=0) 0.720
+
+== 5. Pembacaan mesin: EKG indeks kontrol MUSE 10 (2015-16) lawan MUSE 9 (2017-19)
+Kasus [0]pre per lokasi: {'IHCA': 334, 'OHCA': 241, 'Other': 29, '0': 1}
+  MUSE 10: 3707, MUSE 9: 6269; pembacaan mesin AUC 0.542 [0.530, 0.554]
+  usia + jenis kelamin AUC 0.530 [0.518, 0.541]

@@ -1,0 +1,10 @@
+{
+  "title": "arrest-ecg-timing: timing bias and machine-read findings in ECG prediction of cardiac arrest (Nightingale arrest-ntuh-ecg)",
+  "upload_type": "software",
+  "description": "Analysis code for a matched case-control replication on the Nightingale Open Science arrest-ntuh-ecg dataset. A published design that predicted cardiac arrest of any cause from ECGs recorded up to a year earlier is rebuilt; matching cases and controls on the recording gap brings that signal near chance. A one-dimensional CNN is compared with simple signal features and with the ECG machine's own reading under within-set permutation nulls and matched-set bootstrap. Data are not included; logs hold aggregate results only.",
+  "creators": [
+    {"name": "Halim, Agustino", "orcid": "0009-0008-4388-1174", "affiliation": "Universitas OSO"}
+  ],
+  "license": "MIT",
+  "keywords": ["ECG", "cardiac arrest", "case-control", "temporal bias", "deep learning", "emergency department", "Nightingale Open Science"]
+}

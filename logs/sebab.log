@@ -1,0 +1,83 @@
+
+== Rancangan C bersih diskor ulang per sebab (OOF 03, kasus terpilih lawan semua kontrol)
+Kasus [0]pre per lokasi: {'IHCA': 334, 'OHCA': 241, 'Other': 29, '0': 1}
+  sebab jantung              CNN 0.850 [0.805, 0.888]  n=78
+  irama awal VT/VF           CNN 0.893 [0.852, 0.930]  n=34
+  sebab bukan jantung        CNN 0.746 [0.695, 0.793]  n=100
+Rancangan P: kasus [0]pre 2-730 hari 320, calon kontrol 2843
+  sebab kasus: {'respiratory event': 119, 'cardiac event': 104, 'infectious event': 51, 'neurology': 17, 'unknown': 16, 'GI bleeding': 11, 'others': 2}
+  irama awal kasus: {'PEA': 177, 'asystole': 95, 'VT/VF': 39, 'others; include pacemaker rhythm': 5}
+
+P semua sebab, benih 0: kontrol kurang 84; median jarak kasus 64 hari, kontrol 75
+  usia + jenis kelamin (LR)              AUC 0.451 [0.418, 0.485]   n=320/1516   (0 menit)
+  ciri sinyal sederhana (HGB)            AUC 0.505 [0.469, 0.540]   n=320/1516   (0 menit)
+  CNN 12 sadapan                         AUC 0.531 [0.497, 0.566]   n=320/1516   (5 menit)
+
+P semua sebab, benih 1: kontrol kurang 84; median jarak kasus 64 hari, kontrol 75
+  usia + jenis kelamin (LR)              AUC 0.464 [0.429, 0.497]   n=320/1516   (0 menit)
+  ciri sinyal sederhana (HGB)            AUC 0.488 [0.452, 0.524]   n=320/1516   (0 menit)
+  CNN 12 sadapan                         AUC 0.529 [0.495, 0.560]   n=320/1516   (5 menit)
+
+P semua sebab, benih 2: kontrol kurang 84; median jarak kasus 64 hari, kontrol 76
+  usia + jenis kelamin (LR)              AUC 0.465 [0.429, 0.504]   n=320/1516   (0 menit)
+  ciri sinyal sederhana (HGB)            AUC 0.511 [0.477, 0.548]   n=320/1516   (0 menit)
+  CNN 12 sadapan                         AUC 0.527 [0.491, 0.559]   n=320/1516   (5 menit)
+
+P sebab jantung, benih 0: kontrol kurang 6; median jarak kasus 68 hari, kontrol 79
+  usia + jenis kelamin (LR)              AUC 0.417 [0.361, 0.471]   n=104/514   (0 menit)
+  ciri sinyal sederhana (HGB)            AUC 0.628 [0.569, 0.688]   n=104/514   (0 menit)
+  CNN 12 sadapan                         AUC 0.634 [0.582, 0.686]   n=104/514   (2 menit)
+
+P sebab jantung, benih 1: kontrol kurang 6; median jarak kasus 68 hari, kontrol 80
+  usia + jenis kelamin (LR)              AUC 0.454 [0.395, 0.515]   n=104/514   (0 menit)
+  ciri sinyal sederhana (HGB)            AUC 0.622 [0.559, 0.680]   n=104/514   (0 menit)
+  CNN 12 sadapan                         AUC 0.630 [0.569, 0.688]   n=104/514   (2 menit)
+
+P sebab jantung, benih 2: kontrol kurang 6; median jarak kasus 68 hari, kontrol 83
+  usia + jenis kelamin (LR)              AUC 0.447 [0.385, 0.506]   n=104/514   (0 menit)
+  ciri sinyal sederhana (HGB)            AUC 0.602 [0.549, 0.666]   n=104/514   (0 menit)
+  CNN 12 sadapan                         AUC 0.611 [0.556, 0.668]   n=104/514   (2 menit)
+
+P irama awal VT/VF, benih 0: kontrol kurang 1; median jarak kasus 49 hari, kontrol 48
+  usia + jenis kelamin (LR)              AUC 0.377 [0.287, 0.475]   n=39/194   (0 menit)
+  ciri sinyal sederhana (HGB)            AUC 0.666 [0.570, 0.752]   n=39/194   (0 menit)
+  CNN 12 sadapan                         AUC 0.601 [0.497, 0.701]   n=39/194   (1 menit)
+
+P irama awal VT/VF, benih 1: kontrol kurang 1; median jarak kasus 49 hari, kontrol 48
+  usia + jenis kelamin (LR)              AUC 0.413 [0.318, 0.518]   n=39/194   (0 menit)
+  ciri sinyal sederhana (HGB)            AUC 0.678 [0.591, 0.761]   n=39/194   (0 menit)
+  CNN 12 sadapan                         AUC 0.642 [0.539, 0.739]   n=39/194   (1 menit)
+
+P irama awal VT/VF, benih 2: kontrol kurang 1; median jarak kasus 49 hari, kontrol 50
+  usia + jenis kelamin (LR)              AUC 0.406 [0.312, 0.503]   n=39/194   (0 menit)
+  ciri sinyal sederhana (HGB)            AUC 0.704 [0.624, 0.781]   n=39/194   (0 menit)
+  CNN 12 sadapan                         AUC 0.729 [0.632, 0.819]   n=39/194   (1 menit)
+
+P sebab bukan jantung (plasebo), benih 0: kontrol kurang 14; median jarak kasus 62 hari, kontrol 68
+  usia + jenis kelamin (LR)              AUC 0.418 [0.377, 0.460]   n=216/1066   (0 menit)
+  ciri sinyal sederhana (HGB)            AUC 0.501 [0.460, 0.542]   n=216/1066   (0 menit)
+  CNN 12 sadapan                         AUC 0.558 [0.518, 0.600]   n=216/1066   (4 menit)
+
+P sebab bukan jantung (plasebo), benih 1: kontrol kurang 14; median jarak kasus 62 hari, kontrol 65
+  usia + jenis kelamin (LR)              AUC 0.416 [0.375, 0.454]   n=216/1066   (0 menit)
+  ciri sinyal sederhana (HGB)            AUC 0.516 [0.478, 0.556]   n=216/1066   (0 menit)
+  CNN 12 sadapan                         AUC 0.563 [0.522, 0.605]   n=216/1066   (4 menit)
+
+P sebab bukan jantung (plasebo), benih 2: kontrol kurang 14; median jarak kasus 62 hari, kontrol 70
+  usia + jenis kelamin (LR)              AUC 0.423 [0.383, 0.467]   n=216/1066   (0 menit)
+  ciri sinyal sederhana (HGB)            AUC 0.497 [0.455, 0.542]   n=216/1066   (0 menit)
+  CNN 12 sadapan                         AUC 0.573 [0.531, 0.618]   n=216/1066   (4 menit)
+
+Rekap rancangan P atas 3 benih: rerata AUC [min, maks]
+  semua sebab                    usia + jenis kelamin (LR)    0.460 [0.451, 0.465]
+  semua sebab                    ciri sinyal sederhana (HGB)  0.501 [0.488, 0.511]
+  semua sebab                    CNN 12 sadapan               0.529 [0.527, 0.531]
+  sebab jantung                  usia + jenis kelamin (LR)    0.439 [0.417, 0.454]
+  sebab jantung                  ciri sinyal sederhana (HGB)  0.618 [0.602, 0.628]
+  sebab jantung                  CNN 12 sadapan               0.625 [0.611, 0.634]
+  irama awal VT/VF               usia + jenis kelamin (LR)    0.399 [0.377, 0.413]
+  irama awal VT/VF               ciri sinyal sederhana (HGB)  0.683 [0.666, 0.704]
+  irama awal VT/VF               CNN 12 sadapan               0.657 [0.601, 0.729]
+  sebab bukan jantung (plasebo)  usia + jenis kelamin (LR)    0.419 [0.416, 0.423]
+  sebab bukan jantung (plasebo)  ciri sinyal sederhana (HGB)  0.505 [0.497, 0.516]
+  sebab bukan jantung (plasebo)  CNN 12 sadapan               0.565 [0.558, 0.573]

@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Data never enter this repository
+*.csv
+*.npy
+*.npz
+*.h5
+*.parquet
+turunan/

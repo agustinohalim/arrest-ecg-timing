@@ -1,0 +1,163 @@
+== Komposisi kasus rancangan P (2-730 hari)
+  semua sebab            n=320  lokasi {'OHCA': 185, 'IHCA': 116, 'Other': 19}
+                         sebab {'respiratory event': 119, 'cardiac event': 104, 'infectious event': 51, 'neurology': 17, 'unknown': 16, 'GI bleeding': 11, 'others': 2}
+                         irama {'PEA': 177, 'asystole': 95, 'VT/VF': 39, 'others; include pacemaker rhythm': 5}
+  sebab jantung          n=104  lokasi {'OHCA': 67, 'IHCA': 28, 'Other': 9}
+                         sebab {'cardiac event': 104}
+                         irama {'PEA': 43, 'VT/VF': 32, 'asystole': 27, 'others; include pacemaker rhythm': 2}
+  irama awal VT/VF       n=39   lokasi {'OHCA': 21, 'IHCA': 12, 'Other': 6}
+                         sebab {'cardiac event': 32, 'respiratory event': 3, 'infectious event': 2, 'GI bleeding': 1, 'neurology': 1}
+                         irama {'VT/VF': 39}
+  sebab bukan jantung    n=216  lokasi {'OHCA': 118, 'IHCA': 88, 'Other': 10}
+                         sebab {'respiratory event': 119, 'infectious event': 51, 'neurology': 17, 'unknown': 16, 'GI bleeding': 11, 'others': 2}
+                         irama {'PEA': 134, 'asystole': 68, 'VT/VF': 7, 'others; include pacemaker rhythm': 3}
+
+== Pencocokan pita (seperti 07): jarak saja dan pembacaan mesin, tanpa CNN
+  semua sebab            jarak saja (HGB)                           0.504 [0.485, 0.518]
+  semua sebab            usia + jenis kelamin (LR)                  0.460 [0.451, 0.465]
+  semua sebab            pembacaan mesin: pernyataan + 12SL (HGB)   0.539 [0.536, 0.540]
+  sebab jantung          jarak saja (HGB)                           0.482 [0.461, 0.494]
+  sebab jantung          usia + jenis kelamin (LR)                  0.439 [0.417, 0.454]
+  sebab jantung          pembacaan mesin: pernyataan + 12SL (HGB)   0.641 [0.635, 0.650]
+  irama awal VT/VF       jarak saja (HGB)                           0.472 [0.459, 0.495]
+  irama awal VT/VF       usia + jenis kelamin (LR)                  0.399 [0.377, 0.413]
+  irama awal VT/VF       pembacaan mesin: pernyataan + 12SL (HGB)   0.629 [0.614, 0.641]
+  sebab bukan jantung    jarak saja (HGB)                           0.494 [0.485, 0.500]
+  sebab bukan jantung    usia + jenis kelamin (LR)                  0.419 [0.416, 0.423]
+  sebab bukan jantung    pembacaan mesin: pernyataan + 12SL (HGB)   0.509 [0.503, 0.514]
+
+== Pencocokan dekat (log jarak, usia x jk, 5:1): semua model
+
+  semua sebab, benih 0: kontrol kurang 19; median jarak kasus 64 / kontrol 66 hari; median usia 72 / 71; tahun kasus {'2011-14': 125, '2015-16': 77, '2017': 47, '2019': 41, '2018': 30}
+    jarak saja (HGB)                           AUC 0.456 [0.422, 0.491]
+    usia + jenis kelamin (LR)                  AUC 0.458 [0.423, 0.493]
+    pembacaan mesin: pernyataan + 12SL (HGB)   AUC 0.521 [0.485, 0.555]
+    ciri sinyal sederhana (HGB)                AUC 0.505 [0.467, 0.541]
+    CNN 12 sadapan                             AUC 0.532 [0.498, 0.567]
+    nol permutasi ciri sinyal sederhana (HGB)  rerata 0.496, p95 0.547, p(nol >= amatan) 0.36
+    nol permutasi pembacaan mesin: pernyataan + 12SL (HGB) rerata 0.503, p95 0.540, p(nol >= amatan) 0.24
+
+  semua sebab, benih 1: kontrol kurang 19; median jarak kasus 64 / kontrol 66 hari; median usia 72 / 72; tahun kasus {'2011-14': 125, '2015-16': 77, '2017': 47, '2019': 41, '2018': 30}
+    jarak saja (HGB)                           AUC 0.461 [0.426, 0.495]
+    usia + jenis kelamin (LR)                  AUC 0.463 [0.426, 0.498]
+    pembacaan mesin: pernyataan + 12SL (HGB)   AUC 0.520 [0.485, 0.553]
+    ciri sinyal sederhana (HGB)                AUC 0.519 [0.483, 0.556]
+    CNN 12 sadapan                             AUC 0.553 [0.520, 0.587]
+
+  semua sebab, benih 2: kontrol kurang 19; median jarak kasus 64 / kontrol 66 hari; median usia 72 / 71; tahun kasus {'2011-14': 125, '2015-16': 77, '2017': 47, '2019': 41, '2018': 30}
+    jarak saja (HGB)                           AUC 0.485 [0.451, 0.518]
+    usia + jenis kelamin (LR)                  AUC 0.455 [0.420, 0.488]
+    pembacaan mesin: pernyataan + 12SL (HGB)   AUC 0.534 [0.499, 0.567]
+    ciri sinyal sederhana (HGB)                AUC 0.533 [0.496, 0.570]
+    CNN 12 sadapan                             AUC 0.553 [0.519, 0.590]
+
+  sebab jantung, benih 0: kontrol kurang 5; median jarak kasus 68 / kontrol 67 hari; median usia 69 / 69; tahun kasus {'2011-14': 40, '2015-16': 20, '2017': 19, '2019': 17, '2018': 8}
+    jarak saja (HGB)                           AUC 0.386 [0.330, 0.446]
+    usia + jenis kelamin (LR)                  AUC 0.402 [0.339, 0.465]
+    pembacaan mesin: pernyataan + 12SL (HGB)   AUC 0.655 [0.598, 0.714]
+    ciri sinyal sederhana (HGB)                AUC 0.612 [0.554, 0.667]
+    CNN 12 sadapan                             AUC 0.637 [0.576, 0.694]
+    nol permutasi ciri sinyal sederhana (HGB)  rerata 0.501, p95 0.560, p(nol >= amatan) 0.00
+    nol permutasi pembacaan mesin: pernyataan + 12SL (HGB) rerata 0.493, p95 0.559, p(nol >= amatan) 0.00
+    nol permutasi CNN (5 kali)            [0.525, 0.523, 0.525, 0.503, 0.505]
+
+  sebab jantung, benih 1: kontrol kurang 5; median jarak kasus 68 / kontrol 67 hari; median usia 69 / 69; tahun kasus {'2011-14': 40, '2015-16': 20, '2017': 19, '2019': 17, '2018': 8}
+    jarak saja (HGB)                           AUC 0.380 [0.320, 0.436]
+    usia + jenis kelamin (LR)                  AUC 0.407 [0.345, 0.462]
+    pembacaan mesin: pernyataan + 12SL (HGB)   AUC 0.637 [0.584, 0.696]
+    ciri sinyal sederhana (HGB)                AUC 0.602 [0.544, 0.658]
+    CNN 12 sadapan                             AUC 0.595 [0.532, 0.655]
+
+  sebab jantung, benih 2: kontrol kurang 5; median jarak kasus 68 / kontrol 67 hari; median usia 69 / 69; tahun kasus {'2011-14': 40, '2015-16': 20, '2017': 19, '2019': 17, '2018': 8}
+    jarak saja (HGB)                           AUC 0.371 [0.312, 0.432]
+    usia + jenis kelamin (LR)                  AUC 0.401 [0.342, 0.463]
+    pembacaan mesin: pernyataan + 12SL (HGB)   AUC 0.627 [0.569, 0.681]
+    ciri sinyal sederhana (HGB)                AUC 0.587 [0.524, 0.645]
+    CNN 12 sadapan                             AUC 0.658 [0.598, 0.712]
+
+  irama awal VT/VF, benih 0: kontrol kurang 0; median jarak kasus 49 / kontrol 50 hari; median usia 64 / 65; tahun kasus {'2011-14': 14, '2015-16': 7, '2017': 7, '2019': 6, '2018': 5}
+    jarak saja (HGB)                           AUC 0.364 [0.267, 0.454]
+    usia + jenis kelamin (LR)                  AUC 0.380 [0.291, 0.470]
+    pembacaan mesin: pernyataan + 12SL (HGB)   AUC 0.645 [0.547, 0.741]
+    ciri sinyal sederhana (HGB)                AUC 0.702 [0.616, 0.795]
+    CNN 12 sadapan                             AUC 0.616 [0.513, 0.712]
+    nol permutasi ciri sinyal sederhana (HGB)  rerata 0.495, p95 0.573, p(nol >= amatan) 0.00
+    nol permutasi pembacaan mesin: pernyataan + 12SL (HGB) rerata 0.499, p95 0.644, p(nol >= amatan) 0.06
+
+  irama awal VT/VF, benih 1: kontrol kurang 0; median jarak kasus 49 / kontrol 50 hari; median usia 64 / 65; tahun kasus {'2011-14': 14, '2015-16': 7, '2017': 7, '2019': 6, '2018': 5}
+    jarak saja (HGB)                           AUC 0.364 [0.275, 0.462]
+    usia + jenis kelamin (LR)                  AUC 0.380 [0.293, 0.475]
+    pembacaan mesin: pernyataan + 12SL (HGB)   AUC 0.645 [0.547, 0.734]
+    ciri sinyal sederhana (HGB)                AUC 0.702 [0.614, 0.781]
+    CNN 12 sadapan                             AUC 0.616 [0.520, 0.712]
+
+  irama awal VT/VF, benih 2: kontrol kurang 0; median jarak kasus 49 / kontrol 50 hari; median usia 64 / 65; tahun kasus {'2011-14': 14, '2015-16': 7, '2017': 7, '2019': 6, '2018': 5}
+    jarak saja (HGB)                           AUC 0.364 [0.269, 0.468]
+    usia + jenis kelamin (LR)                  AUC 0.380 [0.287, 0.477]
+    pembacaan mesin: pernyataan + 12SL (HGB)   AUC 0.645 [0.555, 0.732]
+    ciri sinyal sederhana (HGB)                AUC 0.702 [0.608, 0.787]
+    CNN 12 sadapan                             AUC 0.616 [0.519, 0.709]
+
+  sebab bukan jantung, benih 0: kontrol kurang 0; median jarak kasus 62 / kontrol 61 hari; median usia 73 / 73; tahun kasus {'2011-14': 85, '2015-16': 57, '2017': 28, '2019': 24, '2018': 22}
+    jarak saja (HGB)                           AUC 0.461 [0.420, 0.500]
+    usia + jenis kelamin (LR)                  AUC 0.421 [0.379, 0.466]
+    pembacaan mesin: pernyataan + 12SL (HGB)   AUC 0.518 [0.480, 0.557]
+    ciri sinyal sederhana (HGB)                AUC 0.483 [0.441, 0.526]
+    CNN 12 sadapan                             AUC 0.569 [0.529, 0.609]
+    nol permutasi ciri sinyal sederhana (HGB)  rerata 0.500, p95 0.540, p(nol >= amatan) 0.68
+    nol permutasi pembacaan mesin: pernyataan + 12SL (HGB) rerata 0.494, p95 0.526, p(nol >= amatan) 0.18
+
+  sebab bukan jantung, benih 1: kontrol kurang 0; median jarak kasus 62 / kontrol 61 hari; median usia 73 / 73; tahun kasus {'2011-14': 85, '2015-16': 57, '2017': 28, '2019': 24, '2018': 22}
+    jarak saja (HGB)                           AUC 0.452 [0.410, 0.495]
+    usia + jenis kelamin (LR)                  AUC 0.439 [0.399, 0.480]
+    pembacaan mesin: pernyataan + 12SL (HGB)   AUC 0.502 [0.461, 0.544]
+    ciri sinyal sederhana (HGB)                AUC 0.475 [0.431, 0.517]
+    CNN 12 sadapan                             AUC 0.572 [0.532, 0.613]
+
+  sebab bukan jantung, benih 2: kontrol kurang 0; median jarak kasus 62 / kontrol 61 hari; median usia 73 / 73; tahun kasus {'2011-14': 85, '2015-16': 57, '2017': 28, '2019': 24, '2018': 22}
+    jarak saja (HGB)                           AUC 0.467 [0.429, 0.508]
+    usia + jenis kelamin (LR)                  AUC 0.435 [0.395, 0.479]
+    pembacaan mesin: pernyataan + 12SL (HGB)   AUC 0.507 [0.467, 0.550]
+    ciri sinyal sederhana (HGB)                AUC 0.460 [0.420, 0.503]
+    CNN 12 sadapan                             AUC 0.574 [0.531, 0.615]
+
+Rekap pencocokan dekat atas 3 benih: rerata [min, maks]
+  semua sebab            jarak saja (HGB)                           0.467 [0.456, 0.485]
+  semua sebab            usia + jenis kelamin (LR)                  0.459 [0.455, 0.463]
+  semua sebab            pembacaan mesin: pernyataan + 12SL (HGB)   0.525 [0.520, 0.534]
+  semua sebab            ciri sinyal sederhana (HGB)                0.519 [0.505, 0.533]
+  semua sebab            CNN 12 sadapan                             0.546 [0.532, 0.553]
+  sebab jantung          jarak saja (HGB)                           0.379 [0.371, 0.386]
+  sebab jantung          usia + jenis kelamin (LR)                  0.403 [0.401, 0.407]
+  sebab jantung          pembacaan mesin: pernyataan + 12SL (HGB)   0.640 [0.627, 0.655]
+  sebab jantung          ciri sinyal sederhana (HGB)                0.601 [0.587, 0.612]
+  sebab jantung          CNN 12 sadapan                             0.630 [0.595, 0.658]
+  irama awal VT/VF       jarak saja (HGB)                           0.364 [0.364, 0.364]
+  irama awal VT/VF       usia + jenis kelamin (LR)                  0.380 [0.380, 0.380]
+  irama awal VT/VF       pembacaan mesin: pernyataan + 12SL (HGB)   0.645 [0.645, 0.645]
+  irama awal VT/VF       ciri sinyal sederhana (HGB)                0.702 [0.702, 0.702]
+  irama awal VT/VF       CNN 12 sadapan                             0.616 [0.616, 0.616]
+  sebab bukan jantung    jarak saja (HGB)                           0.460 [0.452, 0.467]
+  sebab bukan jantung    usia + jenis kelamin (LR)                  0.432 [0.421, 0.439]
+  sebab bukan jantung    pembacaan mesin: pernyataan + 12SL (HGB)   0.509 [0.502, 0.518]
+  sebab bukan jantung    ciri sinyal sederhana (HGB)                0.473 [0.460, 0.483]
+  sebab bukan jantung    CNN 12 sadapan                             0.572 [0.569, 0.574]
+
+== Selisih AUROC sebab jantung - sebab bukan jantung (pencocokan dekat)
+   per benih: bootstrap kasus dan kontrol terpisah; gabungan: bootstrap dari ketiga benih
+  jarak saja (HGB)                           benih 0: -0.075 [-0.148, -0.002]  P(<=0) 0.976
+  jarak saja (HGB)                           benih 1: -0.071 [-0.141, -0.001]  P(<=0) 0.977
+  jarak saja (HGB)                           benih 2: -0.096 [-0.169, -0.028]  P(<=0) 0.996
+  jarak saja (HGB)                           gabungan: -0.080 [-0.155, -0.007]  P(<=0) 0.983
+  ciri sinyal sederhana (HGB)                benih 0: +0.129 [+0.056, +0.205]  P(<=0) 0.000
+  ciri sinyal sederhana (HGB)                benih 1: +0.127 [+0.058, +0.200]  P(<=0) 0.000
+  ciri sinyal sederhana (HGB)                benih 2: +0.127 [+0.053, +0.203]  P(<=0) 0.001
+  ciri sinyal sederhana (HGB)                gabungan: +0.128 [+0.055, +0.202]  P(<=0) 0.000
+  pembacaan mesin: pernyataan + 12SL (HGB)   benih 0: +0.137 [+0.063, +0.205]  P(<=0) 0.000
+  pembacaan mesin: pernyataan + 12SL (HGB)   benih 1: +0.135 [+0.065, +0.206]  P(<=0) 0.000
+  pembacaan mesin: pernyataan + 12SL (HGB)   benih 2: +0.120 [+0.052, +0.193]  P(<=0) 0.000
+  pembacaan mesin: pernyataan + 12SL (HGB)   gabungan: +0.132 [+0.058, +0.202]  P(<=0) 0.000
+  CNN 12 sadapan                             benih 0: +0.067 [-0.006, +0.138]  P(<=0) 0.038
+  CNN 12 sadapan                             benih 1: +0.023 [-0.054, +0.096]  P(<=0) 0.257
+  CNN 12 sadapan                             benih 2: +0.084 [+0.015, +0.151]  P(<=0) 0.010
+  CNN 12 sadapan                             gabungan: +0.058 [-0.031, +0.141]  P(<=0) 0.102

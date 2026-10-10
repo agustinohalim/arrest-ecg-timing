@@ -1,0 +1,39 @@
+EKG pre: kasus 605, kontrol 6410
+
+N naif, semua tahun
+  CNN 12 sadapan                         AUC 0.650 [0.628, 0.671]   n=605/6410   (28 menit)
+
+M jarak disamakan (kasus > 1 hari, kontrol 2015-17 per pita, 1:5)
+  median jarak kasus 78 hari, kontrol 85 hari
+  jarak saja (HGB)                       AUC 0.502 [0.469, 0.534]   n=381/1905   (0 menit)
+Traceback (most recent call last):
+  File "C:\Users\agust\Documents\UNOSO\Riset\EKG\Uji_Arrest\02_cnn_arrest.py", line 211, in <module>
+    main()
+  File "C:\Users\agust\Documents\UNOSO\Riset\EKG\Uji_Arrest\02_cnn_arrest.py", line 200, in main
+    lapor('usia + jenis kelamin (LR)', M[['usia', 'pria']].to_numpy(float), M, 3, 'lr')
+  File "C:\Users\agust\Documents\UNOSO\Riset\EKG\Uji_Arrest\02_cnn_arrest.py", line 172, in lapor
+    a, lo, hi = auc_ci(y, oof(X, y, g, ulang, cara), g)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\agust\Documents\UNOSO\Riset\EKG\Uji_Arrest\02_cnn_arrest.py", line 153, in oof
+    p[te] = m.fit(X[tr], y[tr]).predict_proba(X[te])[:, 1]
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\agust\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\agust\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\linear_model\_logistic.py", line 1459, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\agust\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py", line 3055, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\agust\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py", line 1327, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "C:\Users\agust\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py", line 1087, in check_array
+    _assert_all_finite(
+  File "C:\Users\agust\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py", line 137, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "C:\Users\agust\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\utils\validation.py", line 186, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input X contains NaN.
+LogisticRegression does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values

@@ -1,0 +1,165 @@
+== Kasus kunjungan terdahulu 2-730 hari: sebab x irama awal
+initial_rhythm           PEA  VT/VF  asystole  kosong  others; include pacemaker rhythm  All
+cause_of_cardiac_arrest                                                                     
+GI bleeding                8      1         2       0                                 0   11
+cardiac event             43     32        27       0                                 2  104
+infectious event          31      2        18       0                                 0   51
+neurology                 10      1         4       1                                 1   17
+others                     1      0         1       0                                 0    2
+respiratory event         77      3        34       3                                 2  119
+unknown                    7      0         9       0                                 0   16
+All                      177     39        95       4                                 5  320
+
+== Sebab x lokasi
+location_of_cardiac_arrest  IHCA  OHCA  Other  All
+cause_of_cardiac_arrest                           
+GI bleeding                    4     7      0   11
+cardiac event                 28    67      9  104
+infectious event              26    22      3   51
+neurology                      9     7      1   17
+others                         0     2      0    2
+respiratory event             46    67      6  119
+unknown                        3    13      0   16
+All                          116   185     19  320
+
+  semua sebab, benih 0: 320 kasus / 1581 kontrol; 320 set
+    pembacaan mesin (HGB)              AUC 0.521  bootstrap set [0.485, 0.558]
+    pembacaan mesin + usia/jk (HGB)    AUC 0.533  bootstrap set [0.499, 0.567]
+    ciri sinyal sederhana (HGB)        AUC 0.505  bootstrap set [0.472, 0.537]
+    CNN 12 sadapan                     AUC 0.532  bootstrap set [0.498, 0.564]
+    nol permutasi dalam set pembacaan mesin (HGB)      rerata 0.495, p95 0.530, maks 0.537, p(nol >= amatan) 0.178
+    nol permutasi dalam set ciri sinyal sederhana (HGB) rerata 0.499, p95 0.534, maks 0.549, p(nol >= amatan) 0.396
+    nol permutasi dalam set CNN (5 kali)     [0.464, 0.492, 0.51, 0.513, 0.5]
+
+  semua sebab, benih 1: 320 kasus / 1581 kontrol; 320 set
+    pembacaan mesin (HGB)              AUC 0.520  bootstrap set [0.485, 0.556]
+    pembacaan mesin + usia/jk (HGB)    AUC 0.527  bootstrap set [0.492, 0.562]
+    ciri sinyal sederhana (HGB)        AUC 0.519  bootstrap set [0.483, 0.553]
+
+  semua sebab, benih 2: 320 kasus / 1581 kontrol; 320 set
+    pembacaan mesin (HGB)              AUC 0.534  bootstrap set [0.499, 0.570]
+    pembacaan mesin + usia/jk (HGB)    AUC 0.534  bootstrap set [0.501, 0.566]
+    ciri sinyal sederhana (HGB)        AUC 0.533  bootstrap set [0.500, 0.569]
+
+  sebab jantung, benih 0: 104 kasus / 515 kontrol; 104 set
+    pembacaan mesin (HGB)              AUC 0.655  bootstrap set [0.602, 0.705]
+    pembacaan mesin + usia/jk (HGB)    AUC 0.658  bootstrap set [0.598, 0.716]
+    ciri sinyal sederhana (HGB)        AUC 0.612  bootstrap set [0.554, 0.670]
+    CNN 12 sadapan                     AUC 0.637  bootstrap set [0.579, 0.693]
+    nol permutasi dalam set pembacaan mesin (HGB)      rerata 0.499, p95 0.571, maks 0.606, p(nol >= amatan) 0.010
+    nol permutasi dalam set ciri sinyal sederhana (HGB) rerata 0.495, p95 0.569, maks 0.600, p(nol >= amatan) 0.010
+    nol permutasi dalam set CNN (5 kali)     [0.583, 0.489, 0.565, 0.527, 0.473]
+
+  sebab jantung, benih 1: 104 kasus / 515 kontrol; 104 set
+    pembacaan mesin (HGB)              AUC 0.637  bootstrap set [0.581, 0.696]
+    pembacaan mesin + usia/jk (HGB)    AUC 0.665  bootstrap set [0.609, 0.722]
+    ciri sinyal sederhana (HGB)        AUC 0.602  bootstrap set [0.547, 0.662]
+
+  sebab jantung, benih 2: 104 kasus / 515 kontrol; 104 set
+    pembacaan mesin (HGB)              AUC 0.627  bootstrap set [0.569, 0.684]
+    pembacaan mesin + usia/jk (HGB)    AUC 0.641  bootstrap set [0.585, 0.697]
+    ciri sinyal sederhana (HGB)        AUC 0.587  bootstrap set [0.525, 0.648]
+
+  sebab bukan jantung, benih 0: 216 kasus / 1080 kontrol; 216 set
+    pembacaan mesin (HGB)              AUC 0.518  bootstrap set [0.478, 0.558]
+    pembacaan mesin + usia/jk (HGB)    AUC 0.516  bootstrap set [0.473, 0.556]
+    ciri sinyal sederhana (HGB)        AUC 0.483  bootstrap set [0.441, 0.525]
+    CNN 12 sadapan                     AUC 0.569  bootstrap set [0.529, 0.609]
+    nol permutasi dalam set pembacaan mesin (HGB)      rerata 0.498, p95 0.538, maks 0.594, p(nol >= amatan) 0.208
+    nol permutasi dalam set ciri sinyal sederhana (HGB) rerata 0.493, p95 0.535, maks 0.553, p(nol >= amatan) 0.634
+    nol permutasi dalam set CNN (5 kali)     [0.498, 0.507, 0.503, 0.487, 0.504]
+
+  sebab bukan jantung, benih 1: 216 kasus / 1080 kontrol; 216 set
+    pembacaan mesin (HGB)              AUC 0.502  bootstrap set [0.463, 0.541]
+    pembacaan mesin + usia/jk (HGB)    AUC 0.497  bootstrap set [0.460, 0.537]
+    ciri sinyal sederhana (HGB)        AUC 0.475  bootstrap set [0.434, 0.515]
+
+  sebab bukan jantung, benih 2: 216 kasus / 1080 kontrol; 216 set
+    pembacaan mesin (HGB)              AUC 0.507  bootstrap set [0.468, 0.549]
+    pembacaan mesin + usia/jk (HGB)    AUC 0.508  bootstrap set [0.466, 0.547]
+    ciri sinyal sederhana (HGB)        AUC 0.460  bootstrap set [0.416, 0.503]
+
+  irama shockable (VT/VF), benih 0: 39 kasus / 195 kontrol; 39 set
+    pembacaan mesin (HGB)              AUC 0.645  bootstrap set [0.549, 0.729]
+    pembacaan mesin + usia/jk (HGB)    AUC 0.671  bootstrap set [0.578, 0.767]
+    ciri sinyal sederhana (HGB)        AUC 0.702  bootstrap set [0.621, 0.784]
+    CNN 12 sadapan                     AUC 0.616  bootstrap set [0.513, 0.717]
+
+  irama shockable (VT/VF), benih 1: 39 kasus / 195 kontrol; 39 set
+    pembacaan mesin (HGB)              AUC 0.645  bootstrap set [0.561, 0.729]
+    pembacaan mesin + usia/jk (HGB)    AUC 0.671  bootstrap set [0.582, 0.756]
+    ciri sinyal sederhana (HGB)        AUC 0.702  bootstrap set [0.619, 0.785]
+    CNN 12 sadapan                     AUC 0.616  bootstrap set [0.520, 0.708]
+
+  irama shockable (VT/VF), benih 2: 39 kasus / 195 kontrol; 39 set
+    pembacaan mesin (HGB)              AUC 0.645  bootstrap set [0.553, 0.732]
+    pembacaan mesin + usia/jk (HGB)    AUC 0.671  bootstrap set [0.590, 0.763]
+    ciri sinyal sederhana (HGB)        AUC 0.702  bootstrap set [0.619, 0.781]
+    CNN 12 sadapan                     AUC 0.616  bootstrap set [0.519, 0.715]
+
+  irama non-shockable (PEA, asistol), benih 0: 272 kasus / 1341 kontrol; 272 set
+    pembacaan mesin (HGB)              AUC 0.527  bootstrap set [0.493, 0.564]
+    pembacaan mesin + usia/jk (HGB)    AUC 0.523  bootstrap set [0.484, 0.557]
+    ciri sinyal sederhana (HGB)        AUC 0.459  bootstrap set [0.423, 0.500]
+    CNN 12 sadapan                     AUC 0.539  bootstrap set [0.503, 0.577]
+
+  irama non-shockable (PEA, asistol), benih 1: 272 kasus / 1341 kontrol; 272 set
+    pembacaan mesin (HGB)              AUC 0.521  bootstrap set [0.486, 0.554]
+    pembacaan mesin + usia/jk (HGB)    AUC 0.501  bootstrap set [0.468, 0.537]
+    ciri sinyal sederhana (HGB)        AUC 0.457  bootstrap set [0.421, 0.495]
+    CNN 12 sadapan                     AUC 0.546  bootstrap set [0.509, 0.581]
+
+  irama non-shockable (PEA, asistol), benih 2: 272 kasus / 1341 kontrol; 272 set
+    pembacaan mesin (HGB)              AUC 0.522  bootstrap set [0.487, 0.554]
+    pembacaan mesin + usia/jk (HGB)    AUC 0.527  bootstrap set [0.494, 0.561]
+    ciri sinyal sederhana (HGB)        AUC 0.465  bootstrap set [0.426, 0.499]
+    CNN 12 sadapan                     AUC 0.546  bootstrap set [0.509, 0.582]
+
+== Rekap atas benih: rerata [min, maks] (CNN: benih 0 saja, kecuali subset irama)
+  semua sebab                          pembacaan mesin (HGB)              0.525 [0.520, 0.534]
+  semua sebab                          pembacaan mesin + usia/jk (HGB)    0.531 [0.527, 0.534]
+  semua sebab                          ciri sinyal sederhana (HGB)        0.519 [0.505, 0.533]
+  semua sebab                          CNN 12 sadapan                     0.532 [0.532, 0.532]
+  sebab jantung                        pembacaan mesin (HGB)              0.640 [0.627, 0.655]
+  sebab jantung                        pembacaan mesin + usia/jk (HGB)    0.655 [0.641, 0.665]
+  sebab jantung                        ciri sinyal sederhana (HGB)        0.601 [0.587, 0.612]
+  sebab jantung                        CNN 12 sadapan                     0.637 [0.637, 0.637]
+  sebab bukan jantung                  pembacaan mesin (HGB)              0.509 [0.502, 0.518]
+  sebab bukan jantung                  pembacaan mesin + usia/jk (HGB)    0.507 [0.497, 0.516]
+  sebab bukan jantung                  ciri sinyal sederhana (HGB)        0.473 [0.460, 0.483]
+  sebab bukan jantung                  CNN 12 sadapan                     0.569 [0.569, 0.569]
+  irama shockable (VT/VF)              pembacaan mesin (HGB)              0.645 [0.645, 0.645]
+  irama shockable (VT/VF)              pembacaan mesin + usia/jk (HGB)    0.671 [0.671, 0.671]
+  irama shockable (VT/VF)              ciri sinyal sederhana (HGB)        0.702 [0.702, 0.702]
+  irama shockable (VT/VF)              CNN 12 sadapan                     0.616 [0.616, 0.616]
+  irama non-shockable (PEA, asistol)   pembacaan mesin (HGB)              0.523 [0.521, 0.527]
+  irama non-shockable (PEA, asistol)   pembacaan mesin + usia/jk (HGB)    0.517 [0.501, 0.527]
+  irama non-shockable (PEA, asistol)   ciri sinyal sederhana (HGB)        0.460 [0.457, 0.465]
+  irama non-shockable (PEA, asistol)   CNN 12 sadapan                     0.544 [0.539, 0.546]
+
+== Selisih AUROC, bootstrap set cocokan digabung atas benih
+  sebab jantung - sebab bukan jantung | pembacaan mesin (HGB)              0.640 - 0.509 = +0.131 [0.062, 0.198]  P(<=0) 0.000  (benih [0, 1, 2])
+  sebab jantung - sebab bukan jantung | pembacaan mesin + usia/jk (HGB)    0.655 - 0.507 = +0.148 [0.073, 0.220]  P(<=0) 0.000  (benih [0, 1, 2])
+  sebab jantung - sebab bukan jantung | ciri sinyal sederhana (HGB)        0.601 - 0.473 = +0.128 [0.058, 0.200]  P(<=0) 0.000  (benih [0, 1, 2])
+  sebab jantung - sebab bukan jantung | CNN 12 sadapan                     0.637 - 0.569 = +0.067 [0.001, 0.143]  P(<=0) 0.020  (benih [0])
+  irama shockable (VT/VF) - irama non-shockable (PEA, asistol) | pembacaan mesin (HGB)              0.645 - 0.523 = +0.122 [0.025, 0.213]  P(<=0) 0.009  (benih [0, 1, 2])
+  irama shockable (VT/VF) - irama non-shockable (PEA, asistol) | pembacaan mesin + usia/jk (HGB)    0.671 - 0.517 = +0.154 [0.049, 0.256]  P(<=0) 0.001  (benih [0, 1, 2])
+  irama shockable (VT/VF) - irama non-shockable (PEA, asistol) | ciri sinyal sederhana (HGB)        0.702 - 0.460 = +0.241 [0.145, 0.330]  P(<=0) 0.000  (benih [0, 1, 2])
+  irama shockable (VT/VF) - irama non-shockable (PEA, asistol) | CNN 12 sadapan                     0.616 - 0.544 = +0.072 [-0.036, 0.176]  P(<=0) 0.093  (benih [0, 1, 2])
+
+== Sebab jantung - bukan jantung menurut lokasi henti (penilaian ulang OOF)
+  IHCA | pembacaan mesin (HGB)              kasus 28 / 88: 0.681 - 0.502 = +0.179 [0.057, 0.294]  P(<=0) 0.003
+  IHCA | ciri sinyal sederhana (HGB)        kasus 28 / 88: 0.565 - 0.480 = +0.085 [-0.046, 0.216]  P(<=0) 0.099
+  OHCA | pembacaan mesin (HGB)              kasus 67 / 118: 0.610 - 0.514 = +0.096 [0.004, 0.185]  P(<=0) 0.019
+  OHCA | ciri sinyal sederhana (HGB)        kasus 67 / 118: 0.610 - 0.467 = +0.142 [0.048, 0.232]  P(<=0) 0.001
+
+== Rancangan C tanpa EKG berbendera infark akut/cedera (penilaian ulang OOF)
+Kasus [0]pre per lokasi: {'IHCA': 334, 'OHCA': 241, 'Other': 29, '0': 1}
+  semua: 178 kasus / 9976 kontrol
+    CNN                          AUC 0.791 [0.754, 0.825]
+    pembacaan mesin + usia/jk    AUC 0.747 [0.713, 0.779]
+    CNN - pembacaan mesin       0.045 [0.010, 0.080]
+  tanpa infark akut/cedera: 151 kasus / 9674 kontrol
+    CNN                          AUC 0.773 [0.729, 0.812]
+    pembacaan mesin + usia/jk    AUC 0.736 [0.699, 0.774]
+    CNN - pembacaan mesin       0.037 [-0.008, 0.082]
