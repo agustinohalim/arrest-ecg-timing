@@ -88,7 +88,8 @@ def gambar1():
           'arrest outside the hospital,\nECG at or after CPR start,\nECG before ED arrival,\n'
           'or more than 24 h before CPR', '#ffffff')
     panah(ax, 0.875, y - h / 2, 0.875, 0.12)
-    fig.savefig(os.path.join(KELUAR, 'Gambar1_alur.png'), dpi=300, bbox_inches='tight')
+    for eks in ('png', 'pdf'):
+        fig.savefig(os.path.join(KELUAR, f'Gambar1_alur.{eks}'), dpi=300, bbox_inches='tight')
     plt.close(fig)
 
 
@@ -132,7 +133,8 @@ def gambar2():
     ax.legend(loc='lower center', bbox_to_anchor=(0.5, 1.0), ncol=3, frameon=False)
     for s in ('top', 'right'):
         ax.spines[s].set_visible(False)
-    fig.savefig(os.path.join(KELUAR, 'Gambar2_auroc.png'), dpi=300, bbox_inches='tight')
+    for eks in ('png', 'pdf'):
+        fig.savefig(os.path.join(KELUAR, f'Gambar2_auroc.{eks}'), dpi=300, bbox_inches='tight')
     plt.close(fig)
 
 

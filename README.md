@@ -33,13 +33,17 @@ Comments and log text are in Indonesian; variable names follow the manuscript's 
 | `02_cnn_arrest.py` | `cnn_arrest_N.log`, `cnn_arrest_MA.log`, `cnn_arrest_MA2.log` | Design B, gap-band matching, five seeds (Supplementary Table S2); positive control |
 | `03_cnn_kunjungan.py` | `cnn_kunjungan.log`, `cnn_kunjungan_bersih.log` | Design C, same-visit ECGs (Table 4); `bersih` is the final case definition |
 | `04_replikasi.py` | `replikasi.log`, `replikasi_jarak_sama.log` | Design A replication and the same-window variant of design B (Table 1) |
-| `05_metrik_tambahan.py` | `metrik_tambahan.log` | Calibration, precision–recall, operating points for design C (Supplementary S6) |
-| `06_revisi.py` | `revisi.log` | Design C: machine reading, retraining by lead time, export-version check (Supplementary S5, Table S3) |
+| `05_metrik_tambahan.py` | `metrik_tambahan.log` | Calibration, precision–recall, operating points for design C (Section 3.5; Supplementary S6) |
+| `06_revisi.py` | `revisi.log` | Design C: machine reading, retraining by lead time, export-version check (Table 5; Supplementary S5) |
 | `07_sebab.py` | `sebab.log` | Design P with band matching (Supplementary S2) |
 | `08_gambar.py` | — | Figures 1 and 2 (numbers copied from the logs; reads no data) |
 | `09_uji_sebab.py` | `uji_sebab.log`, `triase_acak.log` | Design P with nearest-gap matching (Table 2) |
 | `10_telaah_lanjut.py` | `telaah_lanjut.log` | Matched-set bootstrap, within-set permutation, initial rhythm, location, design C without acute infarct (Table 3, Supplementary S11) |
 | `11_uji_silang.py` | `uji_silang.log` | Cause within PEA or asystole, unknown cause, VT/VF permutation, paired CNN vs machine reading, export version for the machine reading (Table 2–3, Supplementary S12) |
+| `12_telaah_je.py` | `telaah_je.log` | Version 1.1.0. Recorded cardiac history of cases (`comorbidities.csv`) by cause, cause contrast within history strata, 12SL measurements against statement flags, within-set c-statistic (Sections 3.2–3.3) |
+
+Section and table numbers refer to the Journal of Electrocardiology version of the manuscript
+(version 1.1.0 of this repository); version 1.0.0 matched the earlier submission.
 
 Run each from `analysis/`, for example:
 

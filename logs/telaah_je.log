@@ -1,0 +1,34 @@
+== 1. Riwayat jantung (comorbidities.csv) pada kasus rancangan P menurut sebab tercatat
+  kasus 320, riwayat terisi 320
+  sebab jantung                    cad 46/104 (44.2 %), hf 25/104 (24.0 %), arrhythmia 20/104 (19.2 %), riwayat 61/104 (58.7 %)
+  bukan jantung (tanpa unknown)    cad 49/200 (24.5 %), hf 19/200 (9.5 %), arrhythmia 29/200 (14.5 %), riwayat 78/200 (39.0 %)
+
+== 2. Kontras sebab di dalam strata riwayat jantung
+  jantung, dengan riwayat                  n=61   ciri sinyal sederhana (HGB)    AUROC 0.662 [0.648, 0.673] benih 0 0.664 [0.584, 0.741] | c dalam set 0.662 [0.647, 0.677]
+  jantung, dengan riwayat                  n=61   pembacaan mesin (HGB)          AUROC 0.704 [0.691, 0.717] benih 0 0.717 [0.641, 0.790] | c dalam set 0.713 [0.707, 0.717]
+  jantung, tanpa riwayat                   n=43   ciri sinyal sederhana (HGB)    AUROC 0.480 [0.477, 0.485] benih 0 0.477 [0.396, 0.565] | c dalam set 0.491 [0.484, 0.498]
+  jantung, tanpa riwayat                   n=43   pembacaan mesin (HGB)          AUROC 0.578 [0.577, 0.581] benih 0 0.577 [0.476, 0.681] | c dalam set 0.547 [0.544, 0.553]
+  bukan jantung, dengan riwayat            n=78   ciri sinyal sederhana (HGB)    AUROC 0.485 [0.479, 0.493] benih 0 0.479 [0.414, 0.543] | c dalam set 0.475 [0.456, 0.495]
+  bukan jantung, dengan riwayat            n=78   pembacaan mesin (HGB)          AUROC 0.501 [0.491, 0.513] benih 0 0.499 [0.429, 0.567] | c dalam set 0.508 [0.490, 0.521]
+  bukan jantung, tanpa riwayat             n=122  ciri sinyal sederhana (HGB)    AUROC 0.485 [0.477, 0.493] benih 0 0.493 [0.435, 0.550] | c dalam set 0.490 [0.484, 0.498]
+  bukan jantung, tanpa riwayat             n=122  pembacaan mesin (HGB)          AUROC 0.595 [0.581, 0.610] benih 0 0.593 [0.538, 0.643] | c dalam set 0.595 [0.580, 0.604]
+  jantung - bukan jantung, dengan riwayat | pembacaan mesin (HGB)          +0.203 [0.095, 0.307]  P(<=0) 0.000
+  jantung - bukan jantung, tanpa riwayat  | pembacaan mesin (HGB)          -0.016 [-0.129, 0.095]  P(<=0) 0.598
+  jantung - bukan jantung, dengan riwayat | ciri sinyal sederhana (HGB)    +0.177 [0.070, 0.279]  P(<=0) 0.000
+  jantung - bukan jantung, tanpa riwayat  | ciri sinyal sederhana (HGB)    -0.005 [-0.114, 0.103]  P(<=0) 0.540
+
+== 3 dan 4. Pengukuran lawan pernyataan; c-statistik di dalam set
+  semua sebab                              n=320  bendera pernyataan saja (HGB)  AUROC 0.567 [0.562, 0.576] benih 0 0.576 [0.545, 0.604] | c dalam set 0.550 [0.543, 0.557]
+  semua sebab                              n=320  ciri sinyal sederhana (HGB)    AUROC 0.519 [0.505, 0.533] benih 0 0.505 [0.471, 0.537] | c dalam set 0.516 [0.504, 0.530]
+  semua sebab                              n=320  pembacaan mesin (HGB)          AUROC 0.525 [0.520, 0.534] benih 0 0.521 [0.489, 0.553] | c dalam set 0.523 [0.516, 0.527]
+  semua sebab                              n=320  pengukuran 12SL saja (HGB)     AUROC 0.521 [0.511, 0.530] benih 0 0.530 [0.494, 0.566] | c dalam set 0.520 [0.509, 0.529]
+  sebab jantung                            n=104  bendera pernyataan saja (HGB)  AUROC 0.636 [0.631, 0.639] benih 0 0.639 [0.582, 0.692] | c dalam set 0.629 [0.619, 0.644]
+  sebab jantung                            n=104  ciri sinyal sederhana (HGB)    AUROC 0.601 [0.587, 0.612] benih 0 0.612 [0.557, 0.669] | c dalam set 0.608 [0.587, 0.628]
+  sebab jantung                            n=104  pembacaan mesin (HGB)          AUROC 0.640 [0.627, 0.655] benih 0 0.655 [0.598, 0.708] | c dalam set 0.636 [0.627, 0.653]
+  sebab jantung                            n=104  pengukuran 12SL saja (HGB)     AUROC 0.645 [0.639, 0.651] benih 0 0.644 [0.589, 0.701] | c dalam set 0.645 [0.628, 0.653]
+  bukan jantung (tanpa unknown)            n=200  bendera pernyataan saja (HGB)  AUROC 0.519 [0.509, 0.528] benih 0 0.509 [0.464, 0.550] | c dalam set 0.519 [0.512, 0.530]
+  bukan jantung (tanpa unknown)            n=200  ciri sinyal sederhana (HGB)    AUROC 0.489 [0.474, 0.496] benih 0 0.496 [0.452, 0.540] | c dalam set 0.486 [0.470, 0.500]
+  bukan jantung (tanpa unknown)            n=200  pembacaan mesin (HGB)          AUROC 0.515 [0.510, 0.523] benih 0 0.510 [0.471, 0.549] | c dalam set 0.510 [0.502, 0.515]
+  bukan jantung (tanpa unknown)            n=200  pengukuran 12SL saja (HGB)     AUROC 0.507 [0.500, 0.511] benih 0 0.500 [0.457, 0.541] | c dalam set 0.497 [0.490, 0.511]
+  jantung - bukan jantung | pengukuran 12SL saja (HGB)     +0.137 [0.065, 0.208]  P(<=0) 0.000
+  jantung - bukan jantung | bendera pernyataan saja (HGB)  +0.117 [0.047, 0.188]  P(<=0) 0.000
