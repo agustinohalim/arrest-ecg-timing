@@ -1,0 +1,22 @@
+== Rancangan P semua sebab
+  nol permutasi dalam set, laju (1000): rerata 0.502, p95 0.531, p 0.0010
+  semua sebab    laju ventrikel saja      0.597 [0.563, 0.632]
+  semua sebab    pengukuran 12SL (LR)     0.607 [0.574, 0.640]
+  sebab jantung  laju ventrikel saja      0.547 [0.489, 0.607]
+  sebab jantung  pengukuran 12SL (LR)     0.697 [0.639, 0.751]
+  bukan jantung  laju ventrikel saja      0.614 [0.569, 0.656]
+  bukan jantung  pengukuran 12SL (LR)     0.601 [0.558, 0.639]
+
+== Rancangan A/B, benih 0, bootstrap pasien
+  1-30    A laju ventrikel saja      0.616 [0.558, 0.670]
+  1-30    A pengukuran 12SL (LR)     0.687 [0.636, 0.739]
+  1-30    B laju ventrikel saja      0.531 [0.472, 0.588]
+  1-30    B pengukuran 12SL (LR)     0.580 [0.523, 0.640]
+  1-30    A - B laju ventrikel saja      [0.001, 0.161]  P(<=0) 0.024
+  1-30    A - B pengukuran 12SL (LR)     [0.031, 0.184]  P(<=0) 0.003
+  30-365  A laju ventrikel saja      0.620 [0.576, 0.663]
+  30-365  A pengukuran 12SL (LR)     0.607 [0.558, 0.646]
+  30-365  B laju ventrikel saja      0.610 [0.564, 0.655]
+  30-365  B pengukuran 12SL (LR)     0.591 [0.542, 0.638]
+  30-365  A - B laju ventrikel saja      [-0.052, 0.073]  P(<=0) 0.384
+  30-365  A - B pengukuran 12SL (LR)     [-0.050, 0.079]  P(<=0) 0.295

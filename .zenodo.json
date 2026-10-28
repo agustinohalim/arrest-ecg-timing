@@ -1,7 +1,7 @@
 {
-  "title": "arrest-ecg-timing: timing bias and machine-read findings in ECG prediction of cardiac arrest (Nightingale arrest-ntuh-ecg)",
+  "title": "arrest-ecg-timing: baselines and recording-time matching in ECG prediction of cardiac arrest (Nightingale arrest-ntuh-ecg)",
   "upload_type": "software",
-  "description": "Analysis code for a matched case-control replication on the Nightingale Open Science arrest-ntuh-ecg dataset. A published design that predicted cardiac arrest of any cause from ECGs recorded up to a year earlier is rebuilt; matching cases and controls on the recording gap brings that signal near chance. A one-dimensional CNN is compared with simple signal features and with the ECG machine's own reading under within-set permutation nulls and matched-set bootstrap. Data are not included; logs hold aggregate results only. Version 1.1.0 adds 12_telaah_je.py: recorded cardiac history of cases by cause, cause contrasts within history strata, 12SL measurements against statement flags, and a within-set c-statistic.",
+  "description": "Analysis code for a matched case-control re-analysis of the Nightingale Open Science arrest-ntuh-ecg dataset. A published design that predicted cardiac arrest from ECGs recorded up to a year earlier is rebuilt, cases and controls are matched on the recording gap, and a one-dimensional CNN is compared with simple signal features, the ECG machine's own reading (fitted with gradient-boosted trees and with logistic regression), and the machine's raw heart rate, under within-set permutation nulls and matched-set bootstrap. Data are not included; logs hold aggregate results only. Version 1.2.0 adds scripts 13-18: logistic-regression and heart-rate comparators in all designs, CNN + machine reading, paired comparisons over all matching seeds, the cardiac-history interaction, and Figure 2 of the current manuscript.",
   "creators": [
     {
       "name": "Halim, Agustino",
@@ -12,12 +12,15 @@
   "license": "MIT",
   "keywords": [
     "ECG",
+    "Nightingale Open Science",
+    "baseline comparison",
     "cardiac arrest",
     "case-control",
-    "temporal bias",
     "deep learning",
     "emergency department",
-    "Nightingale Open Science"
+    "heart rate",
+    "logistic regression",
+    "temporal bias"
   ],
-  "version": "1.1.0"
+  "version": "1.2.0"
 }

@@ -138,7 +138,50 @@ def gambar2():
     plt.close(fig)
 
 
+# Versi JIKI (28 Okt 2026): titik saja, tanpa garis IK (IK tiap model berasal dari skrip berbeda).
+# (label, laju jantung, mesin LR, mesin pohon, CNN). A, B: rancangan_ab_lr.log dan replikasi*.log;
+# P: ci_pembanding.log, mesin_lr.log, telaah_jiki.log; C: rancangan_c_lr.log (mesin dengan usia/jk).
+BARIS_JIKI = [
+    ('A  1–30 d vs 30–730 d (published windows)', 0.615, 0.669, 0.604, 0.643),
+    ('B  1–30 d vs 1–30 d', 0.531, 0.584, 0.525, 0.519),
+    ('A  30–365 d vs 30–730 d (published windows)', 0.621, 0.591, 0.538, 0.574),
+    ('B  30–365 d vs 30–365 d', 0.610, 0.567, 0.536, 0.516),
+    ('P  all causes (320)', 0.597, 0.587, 0.525, 0.546),
+    ('P  cardiac cause (104)', 0.547, 0.661, 0.640, 0.630),
+    ('P  non-cardiac cause (200)', 0.614, 0.602, 0.515, 0.561),
+    ('C  same visit (178)', 0.617, 0.775, 0.747, 0.791),
+]
+UNGU = '#6a3d9a'
+
+
+def gambar2_jiki():
+    fig, ax = plt.subplots(figsize=(6.6, 3.8))
+    n = len(BARIS_JIKI)
+    gaya = [('Heart rate (raw)', JINGGA, 's', 0.27), ('Machine reading (LR)', HIJAU, 'D', 0.09),
+            ('Machine reading (trees)', UNGU, 'v', -0.09), ('CNN', BIRU, 'o', -0.27)]
+    for i, (lab, *nilai) in enumerate(BARIS_JIKI):
+        yy = n - 1 - i
+        ax.plot([min(nilai), max(nilai)], [yy, yy], color='#dddddd', lw=0.8, zorder=1)
+        for k, (nama, warna, tanda, geser) in enumerate(gaya):
+            ax.plot(nilai[k], yy + geser, tanda, color=warna, ms=4.5, zorder=2,
+                    label=nama if i == 0 else None)
+    ax.axvline(0.5, ls='--', color='#888888', lw=0.8)
+    for batas in (n - 4.5, n - 7.5):
+        ax.axhline(batas, color='#cccccc', lw=0.6)
+    ax.set_yticks(range(n))
+    ax.set_yticklabels([b[0] for b in BARIS_JIKI][::-1])
+    ax.set_xlim(0.46, 0.82)
+    ax.set_xlabel('AUROC')
+    ax.legend(loc='lower center', bbox_to_anchor=(0.5, 1.0), ncol=4, frameon=False)
+    for s in ('top', 'right'):
+        ax.spines[s].set_visible(False)
+    for eks in ('png', 'pdf'):
+        fig.savefig(os.path.join(KELUAR, f'Gambar2_auroc_jiki.{eks}'), dpi=300, bbox_inches='tight')
+    plt.close(fig)
+
+
 if __name__ == '__main__':
     gambar1()
     gambar2()
-    print('Gambar1_alur.png, Gambar2_auroc.png ->', KELUAR)
+    gambar2_jiki()
+    print('Gambar1_alur.png, Gambar2_auroc.png, Gambar2_auroc_jiki.png ->', KELUAR)

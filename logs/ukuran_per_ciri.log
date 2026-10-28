@@ -1,0 +1,38 @@
+Kasus [0]pre per lokasi: {'IHCA': 334, 'OHCA': 241, 'Other': 29, '0': 1}
+== Per ukuran: rancangan P semua sebab (benih 0) | kontrol MUSE 10 lawan MUSE 9
+  ukuran            AUC P arah hilang  med kasus  med kontrol | AUC versi arah
+  ventricular_rate  0.599    +   0.0%       85.0        78.0 |     0.506    +
+  atrial_rate       0.583    +   0.0%       85.5        79.0 |     0.505    +
+  pr_interval       0.510    +  14.5%      162.0       162.0 |     0.513    +
+  qrs_duration      0.536    +   0.0%       90.0        88.0 |     0.510    -
+  qt_interval       0.548    -   0.0%      384.0       392.0 |     0.504    +
+  qt_corrected      0.573    +   0.0%      454.0       445.0 |     0.511    +
+  p_axis            0.536    +  15.3%       55.0        54.0 |     0.506    -
+  r_axis            0.515    -   0.0%       27.5        32.0 |     0.501    +
+  t_axis            0.538    +   0.0%       54.5        49.0 |     0.500    -
+  qrs_count         0.595    +   0.0%       14.0        13.0 |     0.505    +
+  q_onset           0.547    -   0.0%      218.0       219.0 |     0.500    -
+  q_offset          0.503    -   0.0%      264.0       264.0 |     0.507    -
+  p_onset           0.526    -  14.5%      137.0       138.0 |     0.511    -
+  p_offset          0.514    -  14.5%      188.0       188.0 |     0.515    -
+  t_offset          0.565    -   0.0%      409.0       414.0 |     0.505    +
+  qtc_frederica     0.523    +   0.0%      427.0       425.0 |     0.510    +
+
+== LR pengukuran 12SL, satu ukuran dibuang (rancangan P semua sebab, benih 0)
+  semua 16: 0.606
+  tanpa ventricular_rate 0.605
+  tanpa atrial_rate      0.604
+  tanpa pr_interval      0.611
+  tanpa qrs_duration     0.605
+  tanpa qt_interval      0.606
+  tanpa qt_corrected     0.606
+  tanpa p_axis           0.598
+  tanpa r_axis           0.607
+  tanpa t_axis           0.606
+  tanpa qrs_count        0.606
+  tanpa q_onset          0.606
+  tanpa q_offset         0.605
+  tanpa p_onset          0.609
+  tanpa p_offset         0.606
+  tanpa t_offset         0.606
+  tanpa qtc_frederica    0.606

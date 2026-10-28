@@ -1,7 +1,8 @@
 # arrest-ecg-timing
 
-Analysis code for the manuscript *Timing bias and machine-read findings in ECG prediction of cardiac
-arrest: a matched case–control replication* (Halim, Lukman, Andika, Macnamara, Erwin; submitted).
+Analysis code for the manuscript *Heart Rate Outperforms a CNN: Baselines and Recording-Time Matching in
+ECG Prediction of Cardiac Arrest* (Halim, Lukman, Andika, Macnamara, Erwin; submitted). Versions 1.0.0 and
+1.1.0 accompanied earlier versions of the manuscript.
 
 On the Nightingale Open Science dataset arrest-ntuh-ecg (emergency department of National Taiwan
 University Hospital), the scripts replicate a published case–control design for predicting cardiac
@@ -41,9 +42,17 @@ Comments and log text are in Indonesian; variable names follow the manuscript's 
 | `10_telaah_lanjut.py` | `telaah_lanjut.log` | Matched-set bootstrap, within-set permutation, initial rhythm, location, design C without acute infarct (Table 3, Supplementary S11) |
 | `11_uji_silang.py` | `uji_silang.log` | Cause within PEA or asystole, unknown cause, VT/VF permutation, paired CNN vs machine reading, export version for the machine reading (Table 2–3, Supplementary S12) |
 | `12_telaah_je.py` | `telaah_je.log` | Version 1.1.0. Recorded cardiac history of cases (`comorbidities.csv`) by cause, cause contrast within history strata, 12SL measurements against statement flags, within-set c-statistic (Sections 3.2–3.3) |
+| `13_telaah_jiki.py` | `telaah_jiki.log` | Version 1.2.0. Interaction of cardiac history and recorded cause (difference in differences); CNN per training run, machine reading with trees and LR, CNN + machine reading (LR), paired over all matching seeds (Sections 4.4–4.5, Table 2) |
+| `14_mesin_lr.py` | `mesin_lr.log` | Machine reading, measurements, and statements with logistic regression in design P; within-set permutation; cause contrast; export-version check (Sections 4.3, 4.5, 4.7) |
+| `15_ukuran_per_ciri.py` | `ukuran_per_ciri.log` | Single-measurement AUROCs and leave-one-out LR in design P; single-measurement export-version check (Sections 4.3, 4.7) |
+| `16_rancangan_ab_lr.py` | `rancangan_ab_lr.log` | Designs A and B with heart rate and machine reading (Table 1) |
+| `17_ci_pembanding.py` | `ci_pembanding.log` | Confidence intervals and 1,000-permutation null for heart rate and measurements; A − B differences (Sections 4.2–4.3, Table 2) |
+| `18_rancangan_c_lr.py` | `rancangan_c_lr.log` | Design C with heart rate and LR comparators, paired differences (Section 4.6, Table 3) |
 
-Section and table numbers refer to the Journal of Electrocardiology version of the manuscript
-(version 1.1.0 of this repository); version 1.0.0 matched the earlier submission.
+Section and table numbers for scripts 13–18 refer to the current manuscript (version 1.2.0 of this
+repository); those for scripts 01–12 refer to the earlier version (1.1.0), whose Tables 1–2 and design
+C table correspond to Tables 1–3 here. `08_gambar.py` also draws Figure 2 of the current manuscript
+(`Gambar2_auroc_jiki`).
 
 Run each from `analysis/`, for example:
 

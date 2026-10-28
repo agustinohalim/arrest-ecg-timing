@@ -1,0 +1,26 @@
+== 1 dan 2. Pembacaan mesin dengan LR, rancangan P
+    nol permutasi dalam set semua sebab pembacaan mesin (LR)           rerata 0.496, p95 0.533, p 0.010
+    nol permutasi dalam set semua sebab pengukuran 12SL saja (LR)      rerata 0.496, p95 0.533, p 0.010
+    nol permutasi dalam set semua sebab bendera pernyataan saja (LR)   rerata 0.495, p95 0.526, p 0.010
+  semua sebab                      n=320  pembacaan mesin (LR)           AUROC 0.587 [0.583, 0.591] benih 0 0.591 [0.558, 0.624] | c dalam set 0.584
+  semua sebab                      n=320  pengukuran 12SL saja (LR)      AUROC 0.607 [0.606, 0.608] benih 0 0.606 [0.572, 0.640] | c dalam set 0.615
+  semua sebab                      n=320  bendera pernyataan saja (LR)   AUROC 0.563 [0.557, 0.567] benih 0 0.567 [0.533, 0.603] | c dalam set 0.555
+  sebab jantung                    n=104  pembacaan mesin (LR)           AUROC 0.661 [0.651, 0.667] benih 0 0.667 [0.613, 0.725] | c dalam set 0.661
+  sebab jantung                    n=104  pengukuran 12SL saja (LR)      AUROC 0.697 [0.690, 0.702] benih 0 0.700 [0.644, 0.754] | c dalam set 0.706
+  sebab jantung                    n=104  bendera pernyataan saja (LR)   AUROC 0.628 [0.620, 0.634] benih 0 0.629 [0.574, 0.681] | c dalam set 0.640
+  bukan jantung (tanpa unknown)    n=200  pembacaan mesin (LR)           AUROC 0.602 [0.594, 0.609] benih 0 0.609 [0.570, 0.649] | c dalam set 0.602
+  bukan jantung (tanpa unknown)    n=200  pengukuran 12SL saja (LR)      AUROC 0.601 [0.599, 0.603] benih 0 0.599 [0.559, 0.640] | c dalam set 0.594
+  bukan jantung (tanpa unknown)    n=200  bendera pernyataan saja (LR)   AUROC 0.554 [0.542, 0.567] benih 0 0.567 [0.528, 0.607] | c dalam set 0.555
+
+== 3. Sebab jantung - bukan jantung, LR
+  pembacaan mesin (LR)           +0.059 [-0.013, 0.129]  P(<=0) 0.057
+  pengukuran 12SL saja (LR)      +0.097 [0.024, 0.164]  P(<=0) 0.005
+  bendera pernyataan saja (LR)   +0.074 [0.000, 0.146]  P(<=0) 0.023
+
+== 4. Kontrol MUSE 10 (2015-16) lawan MUSE 9 (2017-19), LR
+Kasus [0]pre per lokasi: {'IHCA': 334, 'OHCA': 241, 'Other': 29, '0': 1}
+  MUSE 10: 3707, MUSE 9: 6269
+  pembacaan mesin (LR)           AUC 0.570 [0.558, 0.582]
+  pengukuran 12SL saja (LR)      AUC 0.542 [0.530, 0.553]
+  bendera pernyataan saja (LR)   AUC 0.547 [0.536, 0.559]
+  usia + jenis kelamin (LR)      AUC 0.531 [0.519, 0.542]

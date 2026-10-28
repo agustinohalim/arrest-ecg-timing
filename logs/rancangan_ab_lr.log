@@ -1,0 +1,36 @@
+Rerata AUROC atas 3 benih pencocokan [min, maks]; laju mentah: AUROC > 0,5 = kasus lebih cepat
+
+A  0-1 hari lawan kontrol 30-730: kasus 220 / kontrol 1083; median laju kasus 96, kontrol 77 (benih 0)
+  laju ventrikel saja (mentah)   0.677 [0.676, 0.680]
+  usia + jenis kelamin (LR)      0.464 [0.453, 0.478]
+  pengukuran 12SL (LR)           0.796 [0.795, 0.798]
+  pembacaan mesin (LR)           0.848 [0.842, 0.852]
+  pembacaan mesin (HGB)          0.852 [0.849, 0.857]
+
+A  1-30 hari lawan kontrol 30-730: kasus 120 / kontrol 600; median laju kasus 86, kontrol 78 (benih 0)
+  laju ventrikel saja (mentah)   0.615 [0.613, 0.617]
+  usia + jenis kelamin (LR)      0.460 [0.449, 0.468]
+  pengukuran 12SL (LR)           0.674 [0.660, 0.687]
+  pembacaan mesin (LR)           0.669 [0.665, 0.673]
+  pembacaan mesin (HGB)          0.604 [0.591, 0.616]
+
+B  1-30 hari lawan kontrol 1-30: kasus 120 / kontrol 548; median laju kasus 86, kontrol 82 (benih 0)
+  laju ventrikel saja (mentah)   0.531 [0.527, 0.535]
+  usia + jenis kelamin (LR)      0.413 [0.404, 0.426]
+  pengukuran 12SL (LR)           0.586 [0.580, 0.596]
+  pembacaan mesin (LR)           0.584 [0.581, 0.587]
+  pembacaan mesin (HGB)          0.525 [0.513, 0.548]
+
+A  30-365 hari lawan kontrol 30-730: kasus 175 / kontrol 870; median laju kasus 85, kontrol 78 (benih 0)
+  laju ventrikel saja (mentah)   0.621 [0.620, 0.622]
+  usia + jenis kelamin (LR)      0.443 [0.436, 0.453]
+  pengukuran 12SL (LR)           0.609 [0.607, 0.611]
+  pembacaan mesin (LR)           0.591 [0.587, 0.594]
+  pembacaan mesin (HGB)          0.538 [0.518, 0.556]
+
+B  30-365 hari lawan kontrol 30-365: kasus 175 / kontrol 862; median laju kasus 85, kontrol 78 (benih 0)
+  laju ventrikel saja (mentah)   0.610 [0.602, 0.619]
+  usia + jenis kelamin (LR)      0.440 [0.429, 0.452]
+  pengukuran 12SL (LR)           0.591 [0.580, 0.604]
+  pembacaan mesin (LR)           0.567 [0.559, 0.574]
+  pembacaan mesin (HGB)          0.536 [0.520, 0.557]
