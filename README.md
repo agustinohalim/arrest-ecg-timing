@@ -48,7 +48,7 @@ Comments and log text are in Indonesian; variable names follow the manuscript's 
 | `16_rancangan_ab_lr.py` | `rancangan_ab_lr.log` | Designs A and B with heart rate and machine reading (Table 1) |
 | `17_ci_pembanding.py` | `ci_pembanding.log` | Confidence intervals and 1,000-permutation null for heart rate and measurements; A − B differences (Sections 4.2–4.3, Table 2) |
 | `18_rancangan_c_lr.py` | `rancangan_c_lr.log` | Design C with heart rate and LR comparators, paired differences (Section 4.6, Table 3) |
-| `19_berpasangan.py` | `berpasangan.log` (added in the next release; the CNN part is still running) | Version 1.2.1. Designs A/B: A − B per window and the contrast between windows over three seeds; designs P and B: heart rate, measurements (LR), and machine reading (LR) minus the CNN, paired, resampling matched sets or patients and CNN training runs |
+| `19_berpasangan.py` | `berpasangan.log`, `berpasangan_b30365.log` | Version 1.2.1; logs and the `--hanya-b-30-365` option added in 1.2.2 (the full run was stopped by the operating system for low memory during design B 30–365 days, which was then rerun alone; its bootstrap random state differs from the full run). Designs A/B: A − B per window and the contrast between windows over three seeds; designs P and B: heart rate, measurements (LR), and machine reading (LR) minus the CNN, paired, resampling matched sets or patients and CNN training runs |
 
 Section and table numbers for scripts 13–18 refer to the current manuscript (version 1.2.0 of this
 repository); those for scripts 01–12 refer to the earlier version (1.1.0), whose Tables 1–2 and design

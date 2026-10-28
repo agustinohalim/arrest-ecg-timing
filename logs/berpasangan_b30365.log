@@ -1,0 +1,9 @@
+
+== 3. Rancangan B: pembanding - CNN berpasangan (bootstrap pasien + ulangan latih), 3 benih
+  B 30-365 benih 0 selesai
+  B 30-365 benih 1 selesai
+  B 30-365 benih 2 selesai
+  B 30-365                       AUROC: CNN 0.524, laju ventrikel (mentah) 0.610, pengukuran 12SL (LR) 0.591, pembacaan mesin (LR) 0.567
+  B 30-365                       laju ventrikel (mentah) - CNN      +0.086 [0.026, 0.148]  P(<=0) 0.003
+  B 30-365                       pengukuran 12SL (LR) - CNN         +0.067 [0.001, 0.134]  P(<=0) 0.024
+  B 30-365                       pembacaan mesin (LR) - CNN         +0.043 [-0.024, 0.115]  P(<=0) 0.106

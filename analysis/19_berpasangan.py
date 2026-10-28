@@ -13,9 +13,11 @@ Keberatan yang diuji:
      satu ulangan latih CNN secara acak, sehingga ragam antarulangan ikut masuk; digabung atas benih.
 
 CPU. Hanya agregat. Pakai: python -u 19_berpasangan.py > berpasangan.log
+Hanya rancangan B 30-365: python -u 19_berpasangan.py --hanya-b-30-365 > berpasangan_b30365.log
 """
 import importlib.util
 import os
+import sys
 
 import numpy as np
 from sklearn.metrics import roc_auc_score
@@ -164,10 +166,12 @@ def bagian_cnn_p():
         lapor_cnn(nama, hasil)
 
 
-def bagian_cnn_b(pre, kas, jendela):
+def bagian_cnn_b(pre, kas, jendela, hanya=None):
     print('\n== 3. Rancangan B: pembanding - CNN berpasangan (bootstrap pasien + ulangan latih), 3 benih',
           flush=True)
     for w, (m, sama) in jendela.items():
+        if hanya and w != hanya:
+            continue
         hasil = {'auc': {}, 'beda': {}}
         for b in BENIH:
             S = susun_ab(pre, kas[m], sama, b)
@@ -179,6 +183,11 @@ def bagian_cnn_b(pre, kas, jendela):
 
 def main():
     pre, kas, lama, jendela = ab_data()
+    if '--hanya-b-30-365' in sys.argv:
+        # Lari 28 Okt dihentikan sistem (memori habis) sesudah benih 0 jendela ini; bagian lain sudah
+        # di berpasangan.log. Keadaan rng berbeda dari lari penuh, jadi angka bootstrap tidak identik.
+        bagian_cnn_b(pre, kas, jendela, '30-365')
+        return
     bagian_ab(pre, kas, lama, jendela)
     bagian_cnn_p()
     bagian_cnn_b(pre, kas, jendela)

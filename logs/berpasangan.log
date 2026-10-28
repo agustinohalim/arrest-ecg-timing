@@ -1,0 +1,33 @@
+== 1. Rancangan A/B: selisih A - B per jendela dan kontras antarjendela, 3 benih, bootstrap pasien
+  laju ventrikel (mentah)    1-30    A - B +0.084 [-0.002, 0.168]  P(<=0) 0.027
+  laju ventrikel (mentah)    30-365  A - B +0.009 [-0.056, 0.075]  P(<=0) 0.395
+  laju ventrikel (mentah)    (A-B | 1-30) - (A-B | 30-365) +0.075 [-0.029, 0.180]  P(<=0) 0.076
+  pengukuran 12SL (LR)       1-30    A - B +0.089 [0.002, 0.174]  P(<=0) 0.023
+  pengukuran 12SL (LR)       30-365  A - B +0.017 [-0.050, 0.084]  P(<=0) 0.319
+  pengukuran 12SL (LR)       (A-B | 1-30) - (A-B | 30-365) +0.073 [-0.031, 0.179]  P(<=0) 0.091
+
+== 2. Rancangan P: pembanding - CNN berpasangan (bootstrap set + ulangan latih), 3 benih
+  P semua sebab benih 0 selesai
+  P semua sebab benih 1 selesai
+  P semua sebab benih 2 selesai
+  P semua sebab                  AUROC: CNN 0.534, laju ventrikel (mentah) 0.597, pengukuran 12SL (LR) 0.607, pembacaan mesin (LR) 0.587
+  P semua sebab                  laju ventrikel (mentah) - CNN      +0.064 [0.012, 0.112]  P(<=0) 0.004
+  P semua sebab                  pengukuran 12SL (LR) - CNN         +0.074 [0.024, 0.124]  P(<=0) 0.003
+  P semua sebab                  pembacaan mesin (LR) - CNN         +0.054 [0.000, 0.107]  P(<=0) 0.024
+  P bukan jantung (tanpa unknown) benih 0 selesai
+  P bukan jantung (tanpa unknown) benih 1 selesai
+  P bukan jantung (tanpa unknown) benih 2 selesai
+  P bukan jantung (tanpa unknown) AUROC: CNN 0.556, laju ventrikel (mentah) 0.614, pengukuran 12SL (LR) 0.601, pembacaan mesin (LR) 0.602
+  P bukan jantung (tanpa unknown) laju ventrikel (mentah) - CNN      +0.058 [-0.009, 0.126]  P(<=0) 0.044
+  P bukan jantung (tanpa unknown) pengukuran 12SL (LR) - CNN         +0.045 [-0.022, 0.113]  P(<=0) 0.104
+  P bukan jantung (tanpa unknown) pembacaan mesin (LR) - CNN         +0.047 [-0.019, 0.114]  P(<=0) 0.091
+
+== 3. Rancangan B: pembanding - CNN berpasangan (bootstrap pasien + ulangan latih), 3 benih
+  B 1-30 benih 0 selesai
+  B 1-30 benih 1 selesai
+  B 1-30 benih 2 selesai
+  B 1-30                         AUROC: CNN 0.531, laju ventrikel (mentah) 0.531, pengukuran 12SL (LR) 0.586, pembacaan mesin (LR) 0.584
+  B 1-30                         laju ventrikel (mentah) - CNN      -0.000 [-0.085, 0.084]  P(<=0) 0.508
+  B 1-30                         pengukuran 12SL (LR) - CNN         +0.054 [-0.030, 0.136]  P(<=0) 0.105
+  B 1-30                         pembacaan mesin (LR) - CNN         +0.052 [-0.035, 0.141]  P(<=0) 0.110
+  B 30-365 benih 0 selesai
