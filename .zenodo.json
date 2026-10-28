@@ -1,7 +1,7 @@
 {
   "title": "arrest-ecg-timing: baselines and recording-time matching in ECG prediction of cardiac arrest (Nightingale arrest-ntuh-ecg)",
   "upload_type": "software",
-  "description": "Analysis code for a matched case-control re-analysis of the Nightingale Open Science arrest-ntuh-ecg dataset. A published design that predicted cardiac arrest from ECGs recorded up to a year earlier is rebuilt, cases and controls are matched on the recording gap, and a one-dimensional CNN is compared with simple signal features, the ECG machine's own reading (fitted with gradient-boosted trees and with logistic regression), and the machine's raw heart rate, under within-set permutation nulls and matched-set bootstrap. Data are not included; logs hold aggregate results only. Version 1.2.0 adds scripts 13-18: logistic-regression and heart-rate comparators in all designs, CNN + machine reading, paired comparisons over all matching seeds, the cardiac-history interaction, and Figure 2 of the current manuscript.",
+  "description": "Analysis code for a matched case-control re-analysis of the Nightingale Open Science arrest-ntuh-ecg dataset. A published design that predicted cardiac arrest from ECGs recorded up to a year earlier is rebuilt, cases and controls are matched on the recording gap, and a one-dimensional CNN is compared with simple signal features, the ECG machine's own reading (fitted with gradient-boosted trees and with logistic regression), and the machine's raw heart rate, under within-set permutation nulls and matched-set bootstrap. Data are not included; logs hold aggregate results only. Version 1.2.1 adds 19_berpasangan.py (paired comparisons of the simple comparators against the CNN, and the A/B window contrast over three seeds) and an updated Figure 2. Version 1.2.0 added scripts 13-18: logistic-regression and heart-rate comparators in all designs, CNN + machine reading, paired comparisons over all matching seeds, the cardiac-history interaction, and Figure 2 of the current manuscript.",
   "creators": [
     {
       "name": "Halim, Agustino",
@@ -22,5 +22,5 @@
     "logistic regression",
     "temporal bias"
   ],
-  "version": "1.2.0"
+  "version": "1.2.1"
 }

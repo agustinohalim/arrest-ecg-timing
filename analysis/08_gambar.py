@@ -139,26 +139,28 @@ def gambar2():
 
 
 # Versi JIKI (28 Okt 2026): titik saja, tanpa garis IK (IK tiap model berasal dari skrip berbeda).
-# (label, laju jantung, mesin LR, mesin pohon, CNN). A, B: rancangan_ab_lr.log dan replikasi*.log;
-# P: ci_pembanding.log, mesin_lr.log, telaah_jiki.log; C: rancangan_c_lr.log (mesin dengan usia/jk).
+# (label, laju jantung, pengukuran LR, mesin LR, mesin pohon, CNN). A, B: rancangan_ab_lr.log dan
+# replikasi*.log; P: ci_pembanding.log, mesin_lr.log, telaah_jiki.log; C: rancangan_c_lr.log (mesin dengan
+# usia/jk). Telaah 28 Okt: pengukuran LR ditambah, baris berjarak sama ditandai.
 BARIS_JIKI = [
-    ('A  1–30 d vs 30–730 d (published windows)', 0.615, 0.669, 0.604, 0.643),
-    ('B  1–30 d vs 1–30 d', 0.531, 0.584, 0.525, 0.519),
-    ('A  30–365 d vs 30–730 d (published windows)', 0.621, 0.591, 0.538, 0.574),
-    ('B  30–365 d vs 30–365 d', 0.610, 0.567, 0.536, 0.516),
-    ('P  all causes (320)', 0.597, 0.587, 0.525, 0.546),
-    ('P  cardiac cause (104)', 0.547, 0.661, 0.640, 0.630),
-    ('P  non-cardiac cause (200)', 0.614, 0.602, 0.515, 0.561),
-    ('C  same visit (178)', 0.617, 0.775, 0.747, 0.791),
+    ('A  1–30 d, published windows', 0.615, 0.674, 0.669, 0.604, 0.643),
+    ('B  1–30 d, gap matched', 0.531, 0.586, 0.584, 0.525, 0.519),
+    ('A  30–365 d, published windows', 0.621, 0.609, 0.591, 0.538, 0.574),
+    ('B  30–365 d, gap matched', 0.610, 0.591, 0.567, 0.536, 0.516),
+    ('P  all causes (320), gap matched', 0.597, 0.607, 0.587, 0.525, 0.546),
+    ('P  cardiac cause (104), gap matched', 0.547, 0.697, 0.661, 0.640, 0.630),
+    ('P  non-cardiac (200), gap matched', 0.614, 0.601, 0.602, 0.515, 0.561),
+    ('C  same visit (178)', 0.617, 0.734, 0.775, 0.747, 0.791),
 ]
 UNGU = '#6a3d9a'
 
 
 def gambar2_jiki():
-    fig, ax = plt.subplots(figsize=(6.6, 3.8))
+    fig, ax = plt.subplots(figsize=(6.6, 4.2))
     n = len(BARIS_JIKI)
-    gaya = [('Heart rate (raw)', JINGGA, 's', 0.27), ('Machine reading (LR)', HIJAU, 'D', 0.09),
-            ('Machine reading (trees)', UNGU, 'v', -0.09), ('CNN', BIRU, 'o', -0.27)]
+    gaya = [('Heart rate (raw)', JINGGA, 's', 0.30), ('Measurements (LR)', '#b8860b', '^', 0.15),
+            ('Machine reading (LR)', HIJAU, 'D', 0.0), ('Machine reading (trees)', UNGU, 'v', -0.15),
+            ('CNN', BIRU, 'o', -0.30)]
     for i, (lab, *nilai) in enumerate(BARIS_JIKI):
         yy = n - 1 - i
         ax.plot([min(nilai), max(nilai)], [yy, yy], color='#dddddd', lw=0.8, zorder=1)
@@ -172,7 +174,7 @@ def gambar2_jiki():
     ax.set_yticklabels([b[0] for b in BARIS_JIKI][::-1])
     ax.set_xlim(0.46, 0.82)
     ax.set_xlabel('AUROC')
-    ax.legend(loc='lower center', bbox_to_anchor=(0.5, 1.0), ncol=4, frameon=False)
+    ax.legend(loc='lower center', bbox_to_anchor=(0.5, 1.0), ncol=3, frameon=False)
     for s in ('top', 'right'):
         ax.spines[s].set_visible(False)
     for eks in ('png', 'pdf'):
