@@ -1,0 +1,45 @@
+== 1. Kesepakatan dengan 12SL, EKG pre (kasus; kontrol 2015-2017)
+  EKG 4158, gagal didelineasi 45
+  ventricular_rate  Spearman 0.950; median cetak 78, ulang 79; selisih median -0.0
+    MUSE 10  n  2259 selisih median -0.0, IQR 0.7
+    MUSE 7   n   595 selisih median -0.0, IQR 0.8
+    MUSE 9   n  1259 selisih median +0.0, IQR 0.7
+    AUROC selisih kasus lawan kontrol 0.486 [0.459, 0.512]
+  qrs_duration      Spearman 0.114; median cetak 88, ulang 162; selisih median -71.0
+    MUSE 10  n  2259 selisih median -71.0, IQR 62.0
+    MUSE 7   n   595 selisih median -64.0, IQR 67.0
+    MUSE 9   n  1259 selisih median -74.0, IQR 60.0
+    AUROC selisih kasus lawan kontrol 0.527 [0.502, 0.552]
+  qt_interval       Spearman 0.595; median cetak 392, ulang 420; selisih median -30.0
+    MUSE 10  n  2259 selisih median -30.0, IQR 74.0
+    MUSE 7   n   595 selisih median -18.0, IQR 91.5
+    MUSE 9   n  1259 selisih median -34.0, IQR 74.0
+    AUROC selisih kasus lawan kontrol 0.567 [0.542, 0.594]
+  qt_corrected      Spearman 0.167; median cetak 443, ulang 478; selisih median -35.2
+    MUSE 10  n  2259 selisih median -36.0, IQR 83.8
+    MUSE 7   n   595 selisih median -21.2, IQR 104.5
+    MUSE 9   n  1259 selisih median -40.4, IQR 80.7
+    AUROC selisih kasus lawan kontrol 0.568 [0.542, 0.592]
+
+== 2. Rancangan P per sebab: 4 tercetak, 4 hitung ulang, laju hitung ulang; bootstrap set, 3 benih
+  [benih 0 dihitung]
+  [benih 1 dihitung]
+  [benih 2 dihitung]
+== P, sebab jantung
+  laju ulang             +0.565 [0.505, 0.622]
+  4 tercetak             +0.688 [0.638, 0.741]
+  4 ulang                +0.500 [0.426, 0.578]
+  4 tercetak - laju      +0.124 [0.052, 0.194]
+  4 ulang - laju         -0.064 [-0.117, -0.015]
+  4 ulang - 4 tercetak   -0.188 [-0.269, -0.103]
+== P, sebab bukan jantung
+  laju ulang             +0.619 [0.578, 0.661]
+  4 tercetak             +0.612 [0.570, 0.653]
+  4 ulang                +0.611 [0.569, 0.654]
+  4 tercetak - laju      -0.007 [-0.025, 0.009]
+  4 ulang - laju         -0.008 [-0.020, 0.004]
+  4 ulang - 4 tercetak   -0.000 [-0.022, 0.023]
+== Jantung - bukan jantung
+  laju ulang             -0.055 [-0.128, 0.019]
+  4 tercetak             +0.077 [0.011, 0.141]
+  4 ulang                -0.111 [-0.198, -0.022]

@@ -1,8 +1,8 @@
 # arrest-ecg-timing
 
 Analysis code for the manuscript *Recording Time and Heart Rate in Cardiac Arrest Prediction: Six Checks of What a
-Case–Control CNN Learned* (Halim, Lukman, Andika, Macnamara, Erwin; submitted). Version 1.3.1 accompanies it;
-versions 1.0.0 to 1.3.0 accompanied earlier versions of the manuscript.
+Case–Control CNN Learned* (Halim, Lukman, Andika, Macnamara, Erwin; submitted). Version 1.3.2 accompanies it;
+versions 1.0.0 to 1.3.1 accompanied earlier versions of the manuscript.
 
 On the Nightingale Open Science dataset arrest-ntuh-ecg (emergency department of National Taiwan
 University Hospital), the scripts replicate a published case–control design for predicting cardiac
@@ -19,7 +19,7 @@ The scripts print aggregate results only; the logs in `logs/` are those outputs.
 Python 3.12 with NumPy 2.5.2, pandas 3.0.5, scikit-learn 1.9.0, PyTorch 2.14.0 (CPU), and
 matplotlib 3.11.1 for the figures, and SciPy 1.18.1. MiniRocket (scripts 20, 22, 26) runs in a separate
 environment with aeon 1.6.0 (numpy 2.3.5, pandas 3.0.5); the tuned CNN (script 20, `--lengan cnn`) ran on a GPU
-environment with pandas 2.3.3. Point the scripts to the data with the environment variable
+environment with pandas 2.3.3. Script 31 `--tahap ukur` runs in an environment with NeuroKit2 0.2.13 and pandas 2.3.3. Point the scripts to the data with the environment variable
 `NGSCI_DATA` (the folder that contains `arrest-ntuh-ecg/v1`); the default is `C:/Data/Nightingale`.
 Some scripts write out-of-fold predictions to `arrest-ntuh-ecg/turunan/` next to the data, never into
 this repository.
@@ -62,8 +62,9 @@ Comments and log text are in Indonesian; variable names follow the manuscript's 
 | `28_lari_tetap.py` | `lari_tetap_latih.log`, `lari_tetap.log` | One fixed set of 75 CNN runs: single runs and ensemble, increments in both directions, AUROC within heart-rate quintiles, A − B drop (Tables 1, 2, 4, 6; Figure 2). `--tahap latih` writes out-of-fold predictions outside the repository (`ARREST_OOF`); `--tahap lapor` reads them |
 | `29_kontras_strata.py` | `kontras_strata.log` | From the saved predictions of 28: paired A − B drops in the ensemble, in its AUROC within heart-rate quintiles, and in recomputed rate; rate's floor within its own quintiles; size of the printed-minus-recomputed difference (Tables 4 and 5 text, Sections 4.2 and 4.3) |
 | `30_sebab_p.py` | `sebab_p.log` | From the saved predictions of 28: heart rate, measurements, and ensemble by arrest cause in design P, paired differences (Section 4.3) |
+| `31_interval_sinyal.py` | `interval_sinyal.log`, `interval_sinyal_ukur.log`; failed first attempt `interval_sinyal_dwt.log`, `interval_sinyal_dwt_ukur.log` | Version 1.3.2. QRS, QT, and QTc recomputed from a 12-lead median beat, agreement with 12SL by MUSE version with a fixed validity rule, and printed against recomputed measurements by arrest cause in design P (Sections 3.3, 4.3). Per-ECG measurements are written outside the repository (`ARREST_UKUR`) |
 
-Section, table, and figure numbers for scripts 20–30 refer to the current manuscript (version 1.3.1 of this
+Section, table, and figure numbers for scripts 20–31 refer to the current manuscript (version 1.3.2 of this
 repository; its Figure 2 is `Gambar3_auroc_jiki`); those for scripts 13–19 refer to the version of 1.2.x and
 those for 01–12 to the version of 1.1.0. Some log text names review rounds of an internal pre-submission panel;
 those reports are not part of this repository.
