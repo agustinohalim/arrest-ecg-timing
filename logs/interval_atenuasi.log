@@ -1,0 +1,10 @@
+== Kalibrasi derau (semua EKG pre)
+  ventricular_rate  Spearman sasaran 0.953; SD derau 5.3
+  qt_interval       Spearman sasaran 0.814; SD derau 31.2
+  qt_corrected      Spearman sasaran 0.720; SD derau 33.2
+  [benih 0 dihitung]
+  [benih 1 dihitung]
+  [benih 2 dihitung]
+== P, sebab jantung: tercetak + derau setara hitung ulang
+  tercetak berderau      +0.617 [+0.579, +0.661] (150 tarikan)
+  berderau - laju ulang  +0.059 [+0.022, +0.099] (150 tarikan)

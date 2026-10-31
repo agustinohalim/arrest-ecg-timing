@@ -36,6 +36,18 @@ Aturan bacaan, ditulis sebelum hasil ada:
   ulang - tercetak pada sebab jantung                       -> dilaporkan sebagai besar kehilangan, tanpa aturan
 ("ulang" = ukuran hitung ulang yang lolos gerbang; "tercetak" = padanan 12SL-nya.) Analisis post hoc; hasilnya arah.
 
+  --tahap atenuasi (Python sistem; ditambah sesudah telaah panel 31 Okt (f), tiga peran: hilangnya keunggulan bisa karena
+                 ukuran hitung ulang lebih kasar). Ukuran tercetak yang lolos gerbang diberi derau Gaussian bebas, SD per
+                 ukuran dikalibrasi pada semua EKG pre sehingga Spearman(tercetak + derau, tercetak) = Spearman(ulang,
+                 tercetak); 50 tarikan derau x 3 benih di rancangan P sebab jantung; dicetak rerata dan persentil 2,5-97,5
+                 tarikan untuk AUROC dan (berderau - laju ulang). Aturan bacaan, ditulis sebelum hasil ada:
+    rerata (berderau - laju) <= (ulang - laju) + 0,02    -> derau setara cukup menjelaskan hilangnya keunggulan; tidak
+                                                            ada bukti jejak perangkat lunak
+    rerata (berderau - laju) >= (tercetak - laju) - 0,02 -> derau setara tidak menjelaskannya; bacaan perangkat lunak lebih
+                                                            kuat, tetap tanpa bukti langsung
+    di antaranya                                         -> sebagian; tidak dipisahkan
+  Derau bebas tidak meniru galat yang berbeda antara kasus dan kontrol; batas ini disebut.
+
 CPU. Hanya agregat. Pakai:
   python -u 31_interval_sinyal.py --tahap daftar
   ~/venv-nk/Scripts/python.exe -u 31_interval_sinyal.py --tahap ukur > interval_sinyal_ukur.log
@@ -204,10 +216,58 @@ def lapor():
         print(f'  {lab:<22s} {t[:, j].mean():+.3f} {c10.ci(q[:, j])}', flush=True)
 
 
+def atenuasi(n_derau=50):
+    import pandas as pd
+    from scipy.stats import spearmanr
+    from sklearn.metrics import roc_auc_score
+    c30 = _muat_modul('c30', '30_sebab_p.py')
+    c26, c19, c10, c09, c06 = c30.c26, c30.c19, c30.c10, c30.c09, c30.c06
+    g_rng = np.random.default_rng(20261101)
+    U = pd.read_csv(HASIL)
+    pre, calon, kp, _ = c09.data_p()
+    T = pre[(pre.y == 1) | pre.tahun.isin(c26.c02.SAH)].drop_duplicates('ecg_id').merge(U, on='ecg_id')
+    pasang = [(c, u) for c, u in zip(CETAK, ULANG) if u != 'qrs_u']
+    sd = {}
+    print('== Kalibrasi derau (semua EKG pre)', flush=True)
+    for c, u in pasang:
+        A = T.dropna(subset=[c, u])
+        sasaran = spearmanr(A[c], A[u]).statistic
+        x = A[c].to_numpy(float)
+        z = g_rng.standard_normal((5, len(x)))
+        lo, hi = 0.0, 10 * x.std()
+        for _ in range(40):
+            m = (lo + hi) / 2
+            r = np.mean([spearmanr(x, x + m * zi).statistic for zi in z])
+            lo, hi = (m, hi) if r > sasaran else (lo, m)
+        sd[c] = (lo + hi) / 2
+        print(f'  {c:<17s} Spearman sasaran {sasaran:.3f}; SD derau {sd[c]:.1f}', flush=True)
+    cetak = [c for c, _ in pasang]
+    hasil = []
+    for bn in c19.BENIH:
+        S = c10.susun(pre, kp, calon, bn).merge(U, on='ecg_id', how='left')
+        kasus = S[S.y == 1]
+        set_sebab = dict(zip(kasus.set, kasus.cause_of_cardiac_arrest))
+        Q = S[S.set.map(set_sebab).isin(['cardiac event']).to_numpy()].reset_index(drop=True)
+        y, g = Q.y.to_numpy().astype(int), Q.pid.to_numpy()
+        laju = Q.laju_u.fillna(Q.laju_u.median()).to_numpy()
+        a0 = roc_auc_score(y, laju)
+        X = Q[cetak].to_numpy(float)
+        for _ in range(n_derau):
+            Xn = X + g_rng.standard_normal(X.shape) * np.array([sd[c] for c in cetak])
+            a = roc_auc_score(y, c06.oof_lr_logit(Xn, y, g))
+            hasil.append((a, a - a0))
+        print(f'  [benih {bn} dihitung]', flush=True)
+    h = np.array(hasil)
+    print('== P, sebab jantung: tercetak + derau setara hitung ulang', flush=True)
+    for j, lab in enumerate(('tercetak berderau', 'berderau - laju ulang')):
+        print(f'  {lab:<22s} {h[:, j].mean():+.3f} [{np.percentile(h[:, j], 2.5):+.3f}, {np.percentile(h[:, j], 97.5):+.3f}] '
+              f'({len(h)} tarikan)', flush=True)
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--tahap', choices=['daftar', 'ukur', 'lapor'], required=True)
-    {'daftar': daftar, 'ukur': ukur, 'lapor': lapor}[ap.parse_args().tahap]()
+    ap.add_argument('--tahap', choices=['daftar', 'ukur', 'lapor', 'atenuasi'], required=True)
+    {'daftar': daftar, 'ukur': ukur, 'lapor': lapor, 'atenuasi': atenuasi}[ap.parse_args().tahap]()
 
 
 if __name__ == '__main__':
