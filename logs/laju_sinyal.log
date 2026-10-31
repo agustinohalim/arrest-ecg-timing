@@ -1,0 +1,60 @@
+== 1. Kolom metadata (nama saja)
+  muse-info.csv: 11 berkas; kolom ['ecg_id', 'year', 'muse_version', 'ecg_timetag']
+  resting-ecg-measurements.csv: 11 berkas; kolom ['ecg_id', 'year', 'ventricular_rate', 'atrial_rate', 'pr_interval', 'qrs_duration', 'qt_interval', 'qt_corrected', 'p_axis', 'r_axis', 't_axis', 'qrs_count', 'q_onset', 'q_offset', 'p_onset', 'p_offset', 't_offset', 'ecg_sample_base', 'ecg_sample_exponent', 'qtc_frederica', 'ecg_timetag']
+
+== 2. Semua EKG pre: 12SL lawan sinyal
+  EKG 4158, laju sinyal hilang 0, 12SL hilang 0
+  Pearson 12SL-sinyal 0.887; |d|<=5: 0.939
+  MUSE 10  n  2284  y rerata 0.000  laju 12SL median 77.0  sinyal 77.3  d median -0.04 rerata -1.11 sd 10.23  |d|<=5 0.943
+  MUSE 7   n   605  y rerata 1.000  laju 12SL median 88.0  sinyal 88.5  d median -0.12 rerata -3.23 sd 19.07  |d|<=5 0.886
+  MUSE 9   n  1269  y rerata 0.000  laju 12SL median 77.0  sinyal 77.3  d median +0.00 rerata -0.54 sd 6.02  |d|<=5 0.957
+  AUROC d kasus lawan kontrol, semua    0.459 [0.434, 0.484] (n 4158)
+  AUROC d kasus lawan kontrol, |d|<=10  0.471 [0.447, 0.497] (n 4035)
+
+== 4. Jejak MUSE 10 lawan 9, EKG pre kontrol 2015-2017, per ukuran (AUROC terarah)
+  MUSE 10: 2284, MUSE 9: 1269
+  ventricular_rate   0.501
+  atrial_rate        0.507
+  pr_interval        0.520
+  qrs_duration       0.500
+  qt_interval        0.513
+  qt_corrected       0.517
+  p_axis             0.511
+  r_axis             0.502
+  t_axis             0.523
+  qrs_count          0.502
+  q_onset            0.511
+  q_offset           0.501
+  p_onset            0.518
+  p_offset           0.528
+  t_offset           0.511
+  qtc_frederica      0.519
+
+== 3. Per sampel, 3 benih, CNN 2 ulangan
+  A 1-30 benih 0 selesai
+  A 1-30 benih 1 selesai
+  A 1-30 benih 2 selesai
+  A 1-30     AUROC laju 12SL 0.615, laju sinyal 0.613, d 0.492; Spearman logit CNN-laju +0.210 (kontrol +0.197)
+    laju 12SL - laju sinyal              +0.003 [-0.017, 0.018]
+    AUROC d                              +0.492 [0.426, 0.559]
+    (CNN + laju 12SL) - CNN              +0.022 [-0.018, 0.062]
+    (CNN + laju sinyal) - CNN            +0.018 [-0.012, 0.050]
+    (CNN + 13 ukuran tanpa laju) - CNN   +0.048 [-0.005, 0.102]
+  A 30-365 benih 0 selesai
+  A 30-365 benih 1 selesai
+  A 30-365 benih 2 selesai
+  A 30-365   AUROC laju 12SL 0.621, laju sinyal 0.623, d 0.467; Spearman logit CNN-laju +0.347 (kontrol +0.351)
+    laju 12SL - laju sinyal              -0.002 [-0.020, 0.015]
+    AUROC d                              +0.467 [0.416, 0.519]
+    (CNN + laju 12SL) - CNN              +0.057 [0.007, 0.110]
+    (CNN + laju sinyal) - CNN            +0.058 [0.009, 0.109]
+    (CNN + 13 ukuran tanpa laju) - CNN   +0.043 [-0.009, 0.095]
+  P benih 0 selesai
+  P benih 1 selesai
+  P benih 2 selesai
+  P          AUROC laju 12SL 0.597, laju sinyal 0.599, d 0.478; Spearman logit CNN-laju +0.225 (kontrol +0.232)
+    laju 12SL - laju sinyal              -0.001 [-0.013, 0.010]
+    AUROC d                              +0.477 [0.443, 0.513]
+    (CNN + laju 12SL) - CNN              +0.062 [0.018, 0.109]
+    (CNN + laju sinyal) - CNN            +0.063 [0.022, 0.108]
+    (CNN + 13 ukuran tanpa laju) - CNN   +0.070 [0.026, 0.118]

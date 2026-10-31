@@ -1,0 +1,18 @@
+== 1. Kalender: kasus 2015-2017 saja, lawan sampel penuh (benih 0-2)
+  P semua sebab, penuh               kasus 320  laju 0.597 [0.562, 0.632]; ukuran LR 0.607 [0.573, 0.641]; jarak saja 0.514 [0.505, 0.524]
+  P semua sebab, kasus 2015-2017     kasus 47   laju 0.616 [0.528, 0.702]; ukuran LR 0.507 [0.411, 0.609]; jarak saja 0.503 [0.496, 0.513]
+  B 1-30, penuh                      kasus 120  laju 0.531 [0.475, 0.588]; ukuran LR 0.586 [0.525, 0.642]; jarak saja 0.539 [0.478, 0.600]
+  B 1-30, kasus 2015-2017            kasus 12   laju 0.510 [0.312, 0.719]; ukuran LR 0.402 [0.208, 0.600]; jarak saja 0.650 [0.421, 0.850]
+  B 30-365, penuh                    kasus 175  laju 0.610 [0.560, 0.658]; ukuran LR 0.591 [0.537, 0.640]; jarak saja 0.556 [0.508, 0.603]
+  B 30-365, kasus 2015-2017          kasus 32   laju 0.631 [0.515, 0.737]; ukuran LR 0.551 [0.417, 0.684]; jarak saja 0.629 [0.529, 0.728]
+
+== 2. Rancangan B: median jarak (hari) dan jarak saja, benih 0
+  B 1-30    kasus median 8 (IQR 4-20), kontrol median 12 (IQR 5-20)
+  B 30-365  kasus median 100 (IQR 53-182), kontrol median 118 (IQR 65-217)
+
+== 3. Lokasi henti jantung per rancangan
+  P (2-730 hari)            {'OHCA': 185, 'IHCA': 116, 'Other': 19}
+  A/B 1-30                {'IHCA': 65, 'OHCA': 47, 'Other': 8}
+  A/B 30-365              {'OHCA': 108, 'IHCA': 57, 'Other': 10}
+  A/B 0-1 hari              {'IHCA': 191, 'OHCA': 24, 'Other': 5}
+  C: hanya IHCA menurut definisi (03_cnn_kunjungan.py)

@@ -1,8 +1,8 @@
 # arrest-ecg-timing
 
-Analysis code for the manuscript *Heart Rate Outperforms a CNN: Baselines and Recording-Time Matching in
-ECG Prediction of Cardiac Arrest* (Halim, Lukman, Andika, Macnamara, Erwin; submitted). Versions 1.0.0 and
-1.1.0 accompanied earlier versions of the manuscript.
+Analysis code for the manuscript *Testing What a CNN Learned from Case–Control ECGs: Recording Time and
+Heart Rate in Cardiac Arrest Prediction* (Halim, Lukman, Andika, Macnamara, Erwin; submitted). Version 1.3.0
+accompanies it; versions 1.0.0 to 1.2.2 accompanied earlier versions of the manuscript.
 
 On the Nightingale Open Science dataset arrest-ntuh-ecg (emergency department of National Taiwan
 University Hospital), the scripts replicate a published case–control design for predicting cardiac
@@ -17,7 +17,9 @@ The scripts print aggregate results only; the logs in `logs/` are those outputs.
 ## Requirements
 
 Python 3.12 with NumPy 2.5.2, pandas 3.0.5, scikit-learn 1.9.0, PyTorch 2.14.0 (CPU), and
-matplotlib 3.11.1 for the figures. Point the scripts to the data with the environment variable
+matplotlib 3.11.1 for the figures, and SciPy 1.18.1. MiniRocket (scripts 20, 22, 26) runs in a separate
+environment with aeon 1.6.0 (numpy 2.3.5, pandas 3.0.5); the tuned CNN (script 20, `--lengan cnn`) ran on a GPU
+environment with pandas 2.3.3. Point the scripts to the data with the environment variable
 `NGSCI_DATA` (the folder that contains `arrest-ntuh-ecg/v1`); the default is `C:/Data/Nightingale`.
 Some scripts write out-of-fold predictions to `arrest-ntuh-ecg/turunan/` next to the data, never into
 this repository.
@@ -49,11 +51,20 @@ Comments and log text are in Indonesian; variable names follow the manuscript's 
 | `17_ci_pembanding.py` | `ci_pembanding.log` | Confidence intervals and 1,000-permutation null for heart rate and measurements; A − B differences (Sections 4.2–4.3, Table 2) |
 | `18_rancangan_c_lr.py` | `rancangan_c_lr.log` | Design C with heart rate and LR comparators, paired differences (Section 4.6, Table 3) |
 | `19_berpasangan.py` | `berpasangan.log`, `berpasangan_b30365.log` | Version 1.2.1; logs and the `--hanya-b-30-365` option added in 1.2.2 (the full run was stopped by the operating system for low memory during design B 30–365 days, which was then rerun alone; its bootstrap random state differs from the full run). Designs A/B: A − B per window and the contrast between windows over three seeds; designs P and B: heart rate, measurements (LR), and machine reading (LR) minus the CNN, paired, resampling matched sets or patients and CNN training runs |
+| `20_pembanding_kuat.py` | `pembanding_kuat_rocket.log`, `pembanding_kuat_pohon.log`, `pembanding_kuat_cnn.log` | Version 1.3.0. MiniRocket, tuned trees, and tuned CNN in designs B and P (Tables 2 and 6) |
+| `21_kalender_lokasi.py` | `kalender_lokasi.log` | Calendar-matched subset (cases of 2015–2017), location (Table 2) |
+| `22_kalender_berpasangan.py` | `kalender_berpasangan.log` | Calendar subset, paired differences with MiniRocket and the CNN (Section 4.3) |
+| `23_rancangan_a_berpasangan.py` | `rancangan_a_berpasangan.log` | Design A, comparators minus the CNN, paired |
+| `24_tambahan_ukuran.py` | `tambahan_ukuran.log` | Increment of the 16 measurements over the CNN (earlier two-run analysis) |
+| `25_probe_cnn.py` | `probe_cnn.log` | Linear probe of the CNN representation with an untrained floor and a positive control (Table 3) |
+| `26_laju_sinyal.py` | `laju_sinyal.log`, `rocket_a.log` | Heart rate recomputed from the signal; printed minus recomputed rate; export-version trace among controls; MiniRocket in design A (Tables 5 and 6) |
+| `27_komposisi_ab.py` | `komposisi_ab.log` | Control composition in designs A and B; heart rate and measurements with intervals (Table 1, Section 4.2) |
+| `28_lari_tetap.py` | `lari_tetap_latih.log`, `lari_tetap.log` | One fixed set of 75 CNN runs: single runs and ensemble, increments in both directions, AUROC within heart-rate quintiles, A − B drop (Tables 1, 2, 4, 6; Figure 2). `--tahap latih` writes out-of-fold predictions outside the repository (`ARREST_OOF`); `--tahap lapor` reads them |
 
-Section and table numbers for scripts 13–18 refer to the current manuscript (version 1.2.0 of this
-repository); those for scripts 01–12 refer to the earlier version (1.1.0), whose Tables 1–2 and design
-C table correspond to Tables 1–3 here. `08_gambar.py` also draws Figure 2 of the current manuscript
-(`Gambar2_auroc_jiki`).
+Section, table, and figure numbers for scripts 20–28 refer to the current manuscript (version 1.3.0 of this
+repository; its Figure 2 is `Gambar3_auroc_jiki`); those for scripts 13–19 refer to the version of 1.2.x and
+those for 01–12 to the version of 1.1.0. Some log text names review rounds of an internal pre-submission panel;
+those reports are not part of this repository.
 
 Run each from `analysis/`, for example:
 

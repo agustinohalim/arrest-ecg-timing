@@ -1,0 +1,75 @@
+  A 1-30 benih 0 ulangan 0 selesai, AUROC 0.622
+  A 1-30 benih 0 ulangan 1 selesai, AUROC 0.630
+  A 1-30 benih 0 ulangan 2 selesai, AUROC 0.613
+  A 1-30 benih 0 ulangan 3 selesai, AUROC 0.625
+  A 1-30 benih 0 ulangan 4 selesai, AUROC 0.629
+  A 1-30 benih 1 ulangan 0 selesai, AUROC 0.634
+  A 1-30 benih 1 ulangan 1 selesai, AUROC 0.633
+  A 1-30 benih 1 ulangan 2 selesai, AUROC 0.631
+  A 1-30 benih 1 ulangan 3 selesai, AUROC 0.608
+  A 1-30 benih 1 ulangan 4 selesai, AUROC 0.643
+  A 1-30 benih 2 ulangan 0 selesai, AUROC 0.634
+  A 1-30 benih 2 ulangan 1 selesai, AUROC 0.619
+  A 1-30 benih 2 ulangan 2 selesai, AUROC 0.622
+  A 1-30 benih 2 ulangan 3 selesai, AUROC 0.625
+  A 1-30 benih 2 ulangan 4 selesai, AUROC 0.659
+  A 30-365 benih 0 ulangan 0 selesai, AUROC 0.556
+  A 30-365 benih 0 ulangan 1 selesai, AUROC 0.568
+  A 30-365 benih 0 ulangan 2 selesai, AUROC 0.554
+  A 30-365 benih 0 ulangan 3 selesai, AUROC 0.561
+  A 30-365 benih 0 ulangan 4 selesai, AUROC 0.544
+  A 30-365 benih 1 ulangan 0 selesai, AUROC 0.553
+  A 30-365 benih 1 ulangan 1 selesai, AUROC 0.570
+  A 30-365 benih 1 ulangan 2 selesai, AUROC 0.533
+  A 30-365 benih 1 ulangan 3 selesai, AUROC 0.560
+  A 30-365 benih 1 ulangan 4 selesai, AUROC 0.525
+  A 30-365 benih 2 ulangan 0 selesai, AUROC 0.553
+  A 30-365 benih 2 ulangan 1 selesai, AUROC 0.551
+  A 30-365 benih 2 ulangan 2 selesai, AUROC 0.524
+  A 30-365 benih 2 ulangan 3 selesai, AUROC 0.582
+  A 30-365 benih 2 ulangan 4 selesai, AUROC 0.510
+  P benih 0 ulangan 0 selesai, AUROC 0.520
+  P benih 0 ulangan 1 selesai, AUROC 0.521
+  P benih 0 ulangan 2 selesai, AUROC 0.530
+  P benih 0 ulangan 3 selesai, AUROC 0.532
+  P benih 0 ulangan 4 selesai, AUROC 0.543
+  P benih 1 ulangan 0 selesai, AUROC 0.541
+  P benih 1 ulangan 1 selesai, AUROC 0.524
+  P benih 1 ulangan 2 selesai, AUROC 0.530
+  P benih 1 ulangan 3 selesai, AUROC 0.547
+  P benih 1 ulangan 4 selesai, AUROC 0.566
+  P benih 2 ulangan 0 selesai, AUROC 0.552
+  P benih 2 ulangan 1 selesai, AUROC 0.543
+  P benih 2 ulangan 2 selesai, AUROC 0.523
+  P benih 2 ulangan 3 selesai, AUROC 0.553
+  P benih 2 ulangan 4 selesai, AUROC 0.557
+  B 1-30 benih 0 ulangan 0 selesai, AUROC 0.534
+  B 1-30 benih 0 ulangan 1 selesai, AUROC 0.518
+  B 1-30 benih 0 ulangan 2 selesai, AUROC 0.548
+  B 1-30 benih 0 ulangan 3 selesai, AUROC 0.522
+  B 1-30 benih 0 ulangan 4 selesai, AUROC 0.507
+  B 1-30 benih 1 ulangan 0 selesai, AUROC 0.506
+  B 1-30 benih 1 ulangan 1 selesai, AUROC 0.531
+  B 1-30 benih 1 ulangan 2 selesai, AUROC 0.526
+  B 1-30 benih 1 ulangan 3 selesai, AUROC 0.510
+  B 1-30 benih 1 ulangan 4 selesai, AUROC 0.536
+  B 1-30 benih 2 ulangan 0 selesai, AUROC 0.542
+  B 1-30 benih 2 ulangan 1 selesai, AUROC 0.557
+  B 1-30 benih 2 ulangan 2 selesai, AUROC 0.525
+  B 1-30 benih 2 ulangan 3 selesai, AUROC 0.532
+  B 1-30 benih 2 ulangan 4 selesai, AUROC 0.531
+  B 30-365 benih 0 ulangan 0 selesai, AUROC 0.524
+  B 30-365 benih 0 ulangan 1 selesai, AUROC 0.524
+  B 30-365 benih 0 ulangan 2 selesai, AUROC 0.501
+  B 30-365 benih 0 ulangan 3 selesai, AUROC 0.505
+  B 30-365 benih 0 ulangan 4 selesai, AUROC 0.547
+  B 30-365 benih 1 ulangan 0 selesai, AUROC 0.520
+  B 30-365 benih 1 ulangan 1 selesai, AUROC 0.529
+  B 30-365 benih 1 ulangan 2 selesai, AUROC 0.533
+  B 30-365 benih 1 ulangan 3 selesai, AUROC 0.538
+  B 30-365 benih 1 ulangan 4 selesai, AUROC 0.544
+  B 30-365 benih 2 ulangan 0 selesai, AUROC 0.519
+  B 30-365 benih 2 ulangan 1 selesai, AUROC 0.530
+  B 30-365 benih 2 ulangan 2 selesai, AUROC 0.490
+  B 30-365 benih 2 ulangan 3 selesai, AUROC 0.504
+  B 30-365 benih 2 ulangan 4 selesai, AUROC 0.543

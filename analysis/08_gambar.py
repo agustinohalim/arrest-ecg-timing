@@ -36,9 +36,9 @@ def garis(ax, xs, ys, warna):
 
 
 def gambar1():
-    fig, ax = plt.subplots(figsize=(7.2, 5.4))
+    fig, ax = plt.subplots(figsize=(7.2, 4.6))
     ax.set_xlim(0, 1)
-    ax.set_ylim(-0.06, 1)
+    ax.set_ylim(0.20, 1)
     ax.axis('off')
     kotak(ax, 0.27, 0.93, 0.44, 0.09, 'Case group: 974 patients with ROSC, 2011–2019\n'
           '1,686 ECGs: 605 pre, 838 at ROSC, 243 at 24 h', '#fde3d4')
@@ -48,46 +48,36 @@ def gambar1():
           '(2018–2019 date shifts inconsistent)', '#d9e7f5')
     panah(ax, 0.60, 0.885, 0.60, 0.80, BIRU)
 
-    y, w, h = 0.34, 0.225, 0.29
-    xs = [0.125, 0.375, 0.625, 0.875]
+    # Bingkai revisi 3 (30 Okt 2026): rancangan C dan subkelompok sebab tidak lagi di naskah.
+    y, w, h = 0.36, 0.28, 0.24
+    xs = [0.17, 0.50, 0.83]
     teks = [
         'Design A (replication)\nCases: pre 0–1, 1–30,\n30–365 days (220/120/175)\n'
         'Controls: pre 30–730 days\n(2,226 candidates)\nAge × sex matched, 5:1',
-        'Design B (matched gap,\nall causes)\nSame window: 1–30 or\n30–365 days\n'
-        'Gap band: all pre > 1 day,\n381 cases, 1,905 controls',
-        'Design P (prior visit)\nCases: 2–730 days (320)\n'
-        'Cause: cardiac 104,\nnon-cardiac 216\nRhythm: VT/VF 39,\nPEA/asystole 272, other 9\n'
+        'Design B (matched window)\nCases and controls from\nthe same window\n'
+        '1–30 days: 120 / 548\n30–365 days: 175 / 862\nAge × sex matched, 5:1',
+        'Design P (nearest gap)\nCases: 2–730 days (320)\n'
+        'Out-of-hospital 185,\nin-hospital 116, other 19\n'
         'Nearest gap, age, sex; 5:1',
-        'Design C (same visit)\nIn-hospital arrest, ECG after\narrival, 0–24 h before CPR\n'
-        '178 cases vs 9,976\ncontrol index ECGs',
     ]
-    for x, t, c in zip(xs, teks, ['#eeeeee', '#eeeeee', '#fff2b3', '#eeeeee']):
-        kotak(ax, x, y, w, h, t, c)
+    for x, t in zip(xs, teks):
+        kotak(ax, x, y, w, h, t, '#eeeeee')
     atas = y + h / 2
 
-    # kasus (jingga): turun dari kotak kasus ke rel, lalu ke keempat rancangan (sisi kiri kotak)
+    # kasus (jingga): turun dari kotak kasus ke rel, lalu ke ketiga rancangan (sisi kiri kotak)
     garis(ax, [0.10, 0.10], [0.885, 0.62], JINGGA)
-    garis(ax, [xs[0] - 0.04, xs[3] - 0.04], [0.62, 0.62], JINGGA)
+    garis(ax, [0.10, xs[2] - 0.05], [0.62, 0.62], JINGGA)
     for x in xs:
-        panah(ax, x - 0.04, 0.62, x - 0.04, atas, JINGGA)
+        panah(ax, x - 0.05, 0.62, x - 0.05, atas, JINGGA)
     ax.text(0.11, 0.70, 'case ECGs', color=JINGGA, fontsize=6.5)
 
     # kontrol pre 2015-2017 (biru): ke A, B, P (sisi kanan kotak)
     garis(ax, [0.60, 0.60], [0.72, 0.56], BIRU)
-    garis(ax, [xs[0] + 0.04, xs[2] + 0.04], [0.56, 0.56], BIRU)
-    for x in xs[:3]:
-        panah(ax, x + 0.04, 0.56, x + 0.04, atas, BIRU)
+    garis(ax, [xs[0] + 0.05, xs[2] + 0.05], [0.56, 0.56], BIRU)
+    for x in xs:
+        panah(ax, x + 0.05, 0.56, x + 0.05, atas, BIRU)
     ax.text(0.59, 0.66, 'control pre ECGs', color=BIRU, fontsize=6.5, ha='right')
 
-    # indeks kontrol (biru): langsung ke C
-    garis(ax, [0.91, 0.91], [0.885, 0.70], BIRU)
-    panah(ax, 0.91, 0.70, 0.91, atas, BIRU)
-    ax.text(0.92, 0.70, 'control\nindex ECGs', color=BIRU, fontsize=6.5, va='top')
-
-    kotak(ax, 0.84, 0.04, 0.30, 0.16, 'Case pre ECGs not used in design C:\n'
-          'arrest outside the hospital,\nECG at or after CPR start,\nECG before ED arrival,\n'
-          'or more than 24 h before CPR', '#ffffff')
-    panah(ax, 0.875, y - h / 2, 0.875, 0.12)
     for eks in ('png', 'pdf'):
         fig.savefig(os.path.join(KELUAR, f'Gambar1_alur.{eks}'), dpi=300, bbox_inches='tight')
     plt.close(fig)
@@ -182,8 +172,44 @@ def gambar2_jiki():
     plt.close(fig)
 
 
+# Revisi JIKI 30 Okt 2026 (b): AUROC dengan selang. CNN A/B dari probe_cnn.log; laju dan ukuran A/B dari
+# komposisi_ab.log; P dari ci_pembanding.log; CNN P hanya titik (selang pembeda ada di tambahan_ukuran.log).
+BARIS_JIKI3 = [
+    # CNN: satu himpunan lari tetap, 28_lari_tetap.py (lari_tetap.log), satu lari acak per tarikan
+    ('A  1–30 d', (0.628, 0.568, 0.685), (0.615, 0.558, 0.673), (0.674, 0.616, 0.731)),
+    ('B  1–30 d', (0.528, 0.465, 0.590), (0.531, 0.475, 0.589), (0.586, 0.528, 0.644)),
+    ('A  30–365 d', (0.550, 0.487, 0.610), (0.621, 0.574, 0.666), (0.609, 0.562, 0.653)),
+    ('B  30–365 d', (0.523, 0.463, 0.579), (0.610, 0.562, 0.658), (0.591, 0.542, 0.641)),
+    ('P  2–730 d', (0.539, 0.496, 0.582), (0.597, 0.563, 0.632), (0.607, 0.574, 0.640)),
+]
+
+
+def gambar3_jiki():
+    fig, ax = plt.subplots(figsize=(6.0, 3.2))
+    gaya = [('CNN', BIRU, 'o', 0.22), ('Heart rate', JINGGA, 's', 0.0), ('Measurements (LR)', '#b8860b', '^', -0.22)]
+    n = len(BARIS_JIKI3)
+    for i, (lab, *nilai) in enumerate(BARIS_JIKI3):
+        yy = n - 1 - i
+        for (nama, warna, tanda, geser), (t, a, b) in zip(gaya, nilai):
+            if a is not None:
+                ax.plot([a, b], [yy + geser] * 2, color=warna, lw=1.0, zorder=1)
+            ax.plot(t, yy + geser, tanda, color=warna, ms=4.5, zorder=2, label=nama if i == 0 else None)
+    ax.axvline(0.5, ls='--', color='#888888', lw=0.8)
+    ax.set_yticks(range(n))
+    ax.set_yticklabels([b[0] for b in BARIS_JIKI3][::-1])
+    ax.set_xlim(0.44, 0.76)
+    ax.set_xlabel('AUROC with 95 % CI')
+    ax.legend(loc='lower center', bbox_to_anchor=(0.5, 1.0), ncol=3, frameon=False)
+    for s in ('top', 'right'):
+        ax.spines[s].set_visible(False)
+    for eks in ('png', 'pdf'):
+        fig.savefig(os.path.join(KELUAR, f'Gambar3_auroc_jiki.{eks}'), dpi=300, bbox_inches='tight')
+    plt.close(fig)
+
+
 if __name__ == '__main__':
     gambar1()
     gambar2()
     gambar2_jiki()
-    print('Gambar1_alur.png, Gambar2_auroc.png, Gambar2_auroc_jiki.png ->', KELUAR)
+    gambar3_jiki()
+    print('Gambar1_alur.png, Gambar2_auroc.png, Gambar2_auroc_jiki.png, Gambar3_auroc_jiki.png ->', KELUAR)

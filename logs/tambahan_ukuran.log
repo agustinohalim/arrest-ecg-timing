@@ -1,0 +1,31 @@
+== Tambahan ukuran 12SL di atas CNN, 3 benih, CNN 2 ulangan/benih
+  A 1-30 benih 0 selesai
+  A 1-30 benih 1 selesai
+  A 1-30 benih 2 selesai
+  A 1-30         AUROC CNN 0.629, ukuran LR 0.674, CNN + ukuran (LR) 0.686
+  A 1-30         (CNN + ukuran) - CNN   +0.058 [0.006, 0.112]  P(<=0) 0.014
+  A 1-30         ukuran LR - CNN        +0.046 [-0.029, 0.120]  P(<=0) 0.106
+  B 1-30 benih 0 selesai
+  B 1-30 benih 1 selesai
+  B 1-30 benih 2 selesai
+  B 1-30         AUROC CNN 0.531, ukuran LR 0.586, CNN + ukuran (LR) 0.586
+  B 1-30         (CNN + ukuran) - CNN   +0.055 [-0.017, 0.131]  P(<=0) 0.068
+  B 1-30         ukuran LR - CNN        +0.054 [-0.028, 0.136]  P(<=0) 0.099
+  A 30-365 benih 0 selesai
+  A 30-365 benih 1 selesai
+  A 30-365 benih 2 selesai
+  A 30-365       AUROC CNN 0.559, ukuran LR 0.609, CNN + ukuran (LR) 0.606
+  A 30-365       (CNN + ukuran) - CNN   +0.047 [-0.007, 0.101]  P(<=0) 0.043
+  A 30-365       ukuran LR - CNN        +0.050 [-0.008, 0.109]  P(<=0) 0.045
+  B 30-365 benih 0 selesai
+  B 30-365 benih 1 selesai
+  B 30-365 benih 2 selesai
+  B 30-365       AUROC CNN 0.524, ukuran LR 0.591, CNN + ukuran (LR) 0.584
+  B 30-365       (CNN + ukuran) - CNN   +0.060 [-0.006, 0.127]  P(<=0) 0.035
+  B 30-365       ukuran LR - CNN        +0.067 [0.000, 0.135]  P(<=0) 0.025
+  P benih 0 selesai
+  P benih 1 selesai
+  P benih 2 selesai
+  P semua sebab  AUROC CNN 0.534, ukuran LR 0.607, CNN + ukuran (LR) 0.607
+  P semua sebab  (CNN + ukuran) - CNN   +0.073 [0.029, 0.119]  P(<=0) 0.001
+  P semua sebab  ukuran LR - CNN        +0.073 [0.024, 0.123]  P(<=0) 0.002

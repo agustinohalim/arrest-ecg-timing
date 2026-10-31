@@ -1,0 +1,25 @@
+== Lengan CNN disetel: AUROC dan pembanding - lengan berpasangan, 3 benih
+  P semua sebab benih 0: CNN disetel 0.552  setelan [(0.0003, 1, 16, 0.621), (0.0003, 1, 6, 0.617), (0.001, 1, 42, 0.656), (0.001, 1, 2, 0.66), (0.0003, 2, 2, 0.669)]
+  P semua sebab benih 1: CNN disetel 0.555  setelan [(0.001, 2, 3, 0.595), (0.001, 2, 3, 0.654), (0.0003, 1, 39, 0.598), (0.001, 1, 6, 0.665), (0.001, 2, 2, 0.618)]
+  P semua sebab benih 2: CNN disetel 0.533  setelan [(0.0003, 1, 35, 0.636), (0.001, 2, 15, 0.618), (0.0003, 1, 4, 0.634), (0.001, 1, 42, 0.583), (0.0003, 1, 28, 0.614)]
+  P bukan jantung (tanpa unknown) benih 0: CNN disetel 0.539  setelan [(0.001, 1, 2, 0.647), (0.001, 1, 10, 0.619), (0.001, 2, 2, 0.64), (0.001, 1, 49, 0.665), (0.001, 1, 2, 0.675)]
+  P bukan jantung (tanpa unknown) benih 1: CNN disetel 0.543  setelan [(0.001, 2, 4, 0.646), (0.001, 1, 53, 0.701), (0.001, 1, 4, 0.625), (0.0003, 2, 19, 0.64), (0.0003, 2, 36, 0.682)]
+  P bukan jantung (tanpa unknown) benih 2: CNN disetel 0.521  setelan [(0.001, 2, 18, 0.63), (0.001, 2, 1, 0.689), (0.001, 2, 1, 0.562), (0.001, 1, 33, 0.624), (0.001, 2, 4, 0.681)]
+  B 1-30 benih 0: CNN disetel 0.538  setelan [(0.001, 1, 26, 0.682), (0.001, 1, 5, 0.669), (0.0003, 2, 2, 0.598), (0.0003, 2, 2, 0.53), (0.001, 1, 20, 0.521)]
+  B 1-30 benih 1: CNN disetel 0.502  setelan [(0.001, 2, 26, 0.648), (0.0003, 2, 2, 0.673), (0.001, 1, 60, 0.634), (0.001, 1, 51, 0.636), (0.001, 2, 52, 0.611)]
+  B 1-30 benih 2: CNN disetel 0.552  setelan [(0.001, 2, 2, 0.661), (0.001, 1, 51, 0.575), (0.001, 2, 31, 0.647), (0.001, 2, 44, 0.638), (0.001, 1, 1, 0.609)]
+  B 30-365 benih 0: CNN disetel 0.541  setelan [(0.001, 1, 3, 0.66), (0.0003, 1, 54, 0.679), (0.0003, 1, 59, 0.695), (0.001, 2, 15, 0.654), (0.0003, 2, 17, 0.646)]
+  B 30-365 benih 1: CNN disetel 0.561  setelan [(0.001, 2, 21, 0.68), (0.001, 2, 3, 0.608), (0.001, 2, 15, 0.697), (0.001, 2, 10, 0.667), (0.001, 1, 15, 0.683)]
+  B 30-365 benih 2: CNN disetel 0.521  setelan [(0.0003, 2, 35, 0.635), (0.0003, 2, 9, 0.643), (0.0003, 1, 15, 0.631), (0.0003, 1, 6, 0.681), (0.001, 2, 46, 0.689)]
+  P semua sebab                    AUROC CNN disetel 0.547 (rentang 0.533-0.555); laju 0.597; ukuran LR 0.607
+  P semua sebab                    laju ventrikel (mentah) - CNN disetel              +0.051 [0.003, 0.098]  P(<=0) 0.019
+  P semua sebab                    pengukuran 12SL (LR) - CNN disetel                 +0.061 [0.014, 0.112]  P(<=0) 0.007
+  P bukan jantung (tanpa unknown)  AUROC CNN disetel 0.534 (rentang 0.521-0.543); laju 0.614; ukuran LR 0.601
+  P bukan jantung (tanpa unknown)  laju ventrikel (mentah) - CNN disetel              +0.080 [0.024, 0.133]  P(<=0) 0.003
+  P bukan jantung (tanpa unknown)  pengukuran 12SL (LR) - CNN disetel                 +0.066 [0.012, 0.120]  P(<=0) 0.007
+  B 1-30                           AUROC CNN disetel 0.531 (rentang 0.502-0.552); laju 0.531; ukuran LR 0.586
+  B 1-30                           laju ventrikel (mentah) - CNN disetel              +0.001 [-0.081, 0.086]  P(<=0) 0.476
+  B 1-30                           pengukuran 12SL (LR) - CNN disetel                 +0.055 [-0.027, 0.138]  P(<=0) 0.097
+  B 30-365                         AUROC CNN disetel 0.541 (rentang 0.521-0.561); laju 0.614; ukuran LR 0.591
+  B 30-365                         laju ventrikel (mentah) - CNN disetel              +0.072 [0.001, 0.143]  P(<=0) 0.022
+  B 30-365                         pengukuran 12SL (LR) - CNN disetel                 +0.050 [-0.021, 0.130]  P(<=0) 0.090

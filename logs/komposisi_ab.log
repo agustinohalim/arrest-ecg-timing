@@ -1,0 +1,32 @@
+== 1. Kontrol A lawan B, per benih
+  EKG pre per pasien kontrol, maks 1
+  1-30: calon A 2226, calon B 692, calon di keduanya 0
+    benih 0 pasien kontrol di A dan B 0 (0.000 dari B)
+      A n  600  usia 69.1  pria 0.667  tahun 2016.04  MUSE 10 0.665  laju median 78.0
+      B n  548  usia 69.0  pria 0.659  tahun 2016.05  MUSE 10 0.653  laju median 82.0
+    benih 1 pasien kontrol di A dan B 0 (0.000 dari B)
+      A n  600  usia 69.1  pria 0.667  tahun 2016.01  MUSE 10 0.675  laju median 77.0
+      B n  548  usia 68.9  pria 0.659  tahun 2016.10  MUSE 10 0.630  laju median 82.5
+    benih 2 pasien kontrol di A dan B 0 (0.000 dari B)
+      A n  600  usia 69.2  pria 0.667  tahun 2016.08  MUSE 10 0.640  laju median 77.0
+      B n  548  usia 69.0  pria 0.659  tahun 2016.09  MUSE 10 0.633  laju median 82.0
+  30-365: calon A 2226, calon B 1700, calon di keduanya 1700
+    benih 0 pasien kontrol di A dan B 406 (0.471 dari B)
+      A n  870  usia 68.2  pria 0.575  tahun 2016.04  MUSE 10 0.647  laju median 78.0
+      B n  862  usia 68.0  pria 0.571  tahun 2016.02  MUSE 10 0.669  laju median 78.0
+    benih 1 pasien kontrol di A dan B 389 (0.451 dari B)
+      A n  870  usia 68.3  pria 0.575  tahun 2016.03  MUSE 10 0.664  laju median 78.0
+      B n  862  usia 68.1  pria 0.571  tahun 2016.00  MUSE 10 0.673  laju median 79.0
+    benih 2 pasien kontrol di A dan B 395 (0.458 dari B)
+      A n  870  usia 68.2  pria 0.575  tahun 2016.01  MUSE 10 0.675  laju median 78.0
+      B n  862  usia 68.1  pria 0.571  tahun 2016.03  MUSE 10 0.658  laju median 77.0
+
+== 2. AUROC dengan selang, 3 benih, bootstrap pasien digabung
+  A 1-30    laju ventrikel (mentah)    0.616 [0.558, 0.673]
+  A 1-30    pengukuran 12SL (LR)       0.675 [0.616, 0.731]
+  B 1-30    laju ventrikel (mentah)    0.531 [0.475, 0.589]
+  B 1-30    pengukuran 12SL (LR)       0.586 [0.528, 0.644]
+  A 30-365  laju ventrikel (mentah)    0.621 [0.574, 0.666]
+  A 30-365  pengukuran 12SL (LR)       0.608 [0.562, 0.653]
+  B 30-365  laju ventrikel (mentah)    0.611 [0.562, 0.658]
+  B 30-365  pengukuran 12SL (LR)       0.591 [0.542, 0.641]

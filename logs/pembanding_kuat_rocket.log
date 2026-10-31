@@ -1,0 +1,25 @@
+== Lengan MiniRocket: AUROC dan pembanding - lengan berpasangan, 3 benih
+  P semua sebab benih 0: MiniRocket 0.573
+  P semua sebab benih 1: MiniRocket 0.575
+  P semua sebab benih 2: MiniRocket 0.575
+  P bukan jantung (tanpa unknown) benih 0: MiniRocket 0.613
+  P bukan jantung (tanpa unknown) benih 1: MiniRocket 0.559
+  P bukan jantung (tanpa unknown) benih 2: MiniRocket 0.545
+  B 1-30 benih 0: MiniRocket 0.564
+  B 1-30 benih 1: MiniRocket 0.533
+  B 1-30 benih 2: MiniRocket 0.537
+  B 30-365 benih 0: MiniRocket 0.549
+  B 30-365 benih 1: MiniRocket 0.544
+  B 30-365 benih 2: MiniRocket 0.500
+  P semua sebab                    AUROC MiniRocket 0.574 (rentang 0.573-0.575); laju 0.597; ukuran LR 0.607
+  P semua sebab                    laju ventrikel (mentah) - MiniRocket               +0.023 [-0.021, 0.068]  P(<=0) 0.166
+  P semua sebab                    pengukuran 12SL (LR) - MiniRocket                  +0.033 [-0.010, 0.076]  P(<=0) 0.064
+  P bukan jantung (tanpa unknown)  AUROC MiniRocket 0.572 (rentang 0.545-0.613); laju 0.614; ukuran LR 0.600
+  P bukan jantung (tanpa unknown)  laju ventrikel (mentah) - MiniRocket               +0.041 [-0.036, 0.112]  P(<=0) 0.167
+  P bukan jantung (tanpa unknown)  pengukuran 12SL (LR) - MiniRocket                  +0.028 [-0.054, 0.100]  P(<=0) 0.268
+  B 1-30                           AUROC MiniRocket 0.545 (rentang 0.533-0.564); laju 0.531; ukuran LR 0.586
+  B 1-30                           laju ventrikel (mentah) - MiniRocket               -0.014 [-0.094, 0.067]  P(<=0) 0.617
+  B 1-30                           pengukuran 12SL (LR) - MiniRocket                  +0.041 [-0.042, 0.129]  P(<=0) 0.153
+  B 30-365                         AUROC MiniRocket 0.531 (rentang 0.500-0.549); laju 0.610; ukuran LR 0.591
+  B 30-365                         laju ventrikel (mentah) - MiniRocket               +0.079 [0.009, 0.160]  P(<=0) 0.013
+  B 30-365                         pengukuran 12SL (LR) - MiniRocket                  +0.061 [-0.013, 0.149]  P(<=0) 0.059

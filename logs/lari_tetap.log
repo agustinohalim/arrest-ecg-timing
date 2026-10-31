@@ -1,0 +1,95 @@
+sampel lengkap: ['A 1-30', 'A 30-365', 'P', 'B 1-30', 'B 30-365']
+  [A 1-30 benih 0 dihitung]
+  [A 1-30 benih 1 dihitung]
+  [A 1-30 benih 2 dihitung]
+
+== A 1-30
+  AUROC CNN per ulangan (rerata benih): 0.630, 0.627, 0.622, 0.619, 0.644; per benih: 0.624, 0.630, 0.632
+  laju saja (LR) 0.611; laju berstrata (sisa di dalam kuintil) 0.502
+  CNN                  satu lari +0.629 [0.567, 0.688] rentang ulangan [+0.619, +0.644] | ansambel +0.663 [0.604, 0.719]
+  + laju sinyal        satu lari +0.024 [-0.007, 0.058] rentang ulangan [+0.016, +0.030] | ansambel +0.013 [-0.006, 0.032]
+  + 13 ukuran          satu lari +0.052 [-0.004, 0.113] rentang ulangan [+0.044, +0.063] | ansambel +0.031 [-0.011, 0.078]
+  + 16 ukuran          satu lari +0.061 [0.002, 0.123] rentang ulangan [+0.053, +0.072] | ansambel +0.037 [-0.007, 0.085]
+  (laju + CNN) - laju  satu lari +0.041 [-0.014, 0.102] rentang ulangan [+0.035, +0.057] | ansambel +0.064 [0.004, 0.128]
+  ukuran LR - CNN      satu lari +0.046 [-0.035, 0.127] rentang ulangan [+0.031, +0.055] | ansambel +0.011 [-0.057, 0.083]
+  CNN berstrata laju   satu lari +0.601 [0.535, 0.666] rentang ulangan [+0.593, +0.616] | ansambel +0.630 [0.568, 0.691]
+  laju - CNN           satu lari -0.017 [-0.100, 0.060] rentang ulangan [-0.032, -0.008] | ansambel -0.051 [-0.127, 0.021]
+  (laju + 13) - laju   satu lari +0.048 [-0.010, 0.109] rentang ulangan [+0.048, +0.048] | ansambel +0.048 [-0.010, 0.109]
+  porsi kelebihan tersisa, satu lari: (0.601 - 0,5) / (0.629 - 0,5) = 0.79
+  porsi kelebihan tersisa, ansambel: (0.630 - 0,5) / (0.663 - 0,5) = 0.80
+  [A 30-365 benih 0 dihitung]
+  [A 30-365 benih 1 dihitung]
+  [A 30-365 benih 2 dihitung]
+
+== A 30-365
+  AUROC CNN per ulangan (rerata benih): 0.554, 0.563, 0.537, 0.567, 0.526; per benih: 0.557, 0.548, 0.544
+  laju saja (LR) 0.620; laju berstrata (sisa di dalam kuintil) 0.533
+  CNN                  satu lari +0.550 [0.488, 0.609] rentang ulangan [+0.526, +0.567] | ansambel +0.572 [0.526, 0.618]
+  + laju sinyal        satu lari +0.066 [0.010, 0.136] rentang ulangan [+0.050, +0.084] | ansambel +0.043 [-0.001, 0.089]
+  + 13 ukuran          satu lari +0.052 [-0.009, 0.122] rentang ulangan [+0.033, +0.073] | ansambel +0.027 [-0.023, 0.076]
+  + 16 ukuran          satu lari +0.056 [-0.006, 0.128] rentang ulangan [+0.039, +0.078] | ansambel +0.032 [-0.018, 0.083]
+  (laju + CNN) - laju  satu lari -0.005 [-0.022, 0.014] rentang ulangan [-0.010, -0.002] | ansambel -0.005 [-0.023, 0.011]
+  ukuran LR - CNN      satu lari +0.059 [-0.006, 0.132] rentang ulangan [+0.041, +0.082] | ansambel +0.037 [-0.020, 0.092]
+  CNN berstrata laju   satu lari +0.514 [0.450, 0.574] rentang ulangan [+0.500, +0.529] | ansambel +0.522 [0.469, 0.575]
+  laju - CNN           satu lari +0.070 [0.004, 0.143] rentang ulangan [+0.052, +0.093] | ansambel +0.048 [-0.005, 0.104]
+  (laju + 13) - laju   satu lari -0.013 [-0.044, 0.016] rentang ulangan [-0.013, -0.013] | ansambel -0.013 [-0.044, 0.016]
+  porsi kelebihan tersisa, satu lari: (0.514 - 0,5) / (0.550 - 0,5) = 0.28
+  porsi kelebihan tersisa, ansambel: (0.522 - 0,5) / (0.572 - 0,5) = 0.31
+  [P benih 0 dihitung]
+  [P benih 1 dihitung]
+  [P benih 2 dihitung]
+
+== P
+  AUROC CNN per ulangan (rerata benih): 0.538, 0.530, 0.528, 0.544, 0.555; per benih: 0.529, 0.542, 0.546
+  laju saja (LR) 0.598; laju berstrata (sisa di dalam kuintil) 0.512
+  CNN                  satu lari +0.539 [0.496, 0.582] rentang ulangan [+0.528, +0.555] | ansambel +0.559 [0.522, 0.596]
+  + laju sinyal        satu lari +0.057 [0.015, 0.104] rentang ulangan [+0.045, +0.068] | ansambel +0.040 [0.006, 0.074]
+  + 13 ukuran          satu lari +0.064 [0.019, 0.113] rentang ulangan [+0.050, +0.076] | ansambel +0.048 [0.008, 0.089]
+  + 16 ukuran          satu lari +0.068 [0.021, 0.116] rentang ulangan [+0.052, +0.080] | ansambel +0.050 [0.011, 0.091]
+  (laju + CNN) - laju  satu lari -0.003 [-0.024, 0.015] rentang ulangan [-0.009, +0.002] | ansambel +0.002 [-0.016, 0.021]
+  ukuran LR - CNN      satu lari +0.068 [0.018, 0.120] rentang ulangan [+0.052, +0.080] | ansambel +0.048 [0.002, 0.095]
+  CNN berstrata laju   satu lari +0.519 [0.477, 0.561] rentang ulangan [+0.503, +0.533] | ansambel +0.530 [0.493, 0.568]
+  laju - CNN           satu lari +0.059 [0.005, 0.113] rentang ulangan [+0.043, +0.070] | ansambel +0.039 [-0.009, 0.085]
+  (laju + 13) - laju   satu lari +0.008 [-0.018, 0.035] rentang ulangan [+0.008, +0.008] | ansambel +0.008 [-0.018, 0.035]
+  porsi kelebihan tersisa, satu lari: (0.519 - 0,5) / (0.539 - 0,5) = 0.50
+  porsi kelebihan tersisa, ansambel: (0.530 - 0,5) / (0.559 - 0,5) = 0.51
+  [B 1-30 benih 0 dihitung]
+  [B 1-30 benih 1 dihitung]
+  [B 1-30 benih 2 dihitung]
+
+== B 1-30
+  AUROC CNN per ulangan (rerata benih): 0.527, 0.535, 0.533, 0.521, 0.524; per benih: 0.526, 0.522, 0.537
+  laju saja (LR) 0.514; laju berstrata (sisa di dalam kuintil) 0.524
+  CNN                  satu lari +0.528 [0.466, 0.591] rentang ulangan [+0.521, +0.535] | ansambel +0.542 [0.484, 0.603]
+  + laju sinyal        satu lari -0.010 [-0.069, 0.050] rentang ulangan [-0.015, -0.001] | ansambel -0.009 [-0.048, 0.037]
+  + 13 ukuran          satu lari +0.044 [-0.033, 0.119] rentang ulangan [+0.040, +0.051] | ansambel +0.033 [-0.038, 0.103]
+  + 16 ukuran          satu lari +0.058 [-0.016, 0.134] rentang ulangan [+0.054, +0.066] | ansambel +0.047 [-0.023, 0.116]
+  (laju + CNN) - laju  satu lari +0.005 [-0.044, 0.065] rentang ulangan [-0.007, +0.020] | ansambel +0.019 [-0.029, 0.080]
+  ukuran LR - CNN      satu lari +0.057 [-0.022, 0.138] rentang ulangan [+0.050, +0.064] | ansambel +0.043 [-0.035, 0.122]
+  CNN berstrata laju   satu lari +0.522 [0.458, 0.587] rentang ulangan [+0.514, +0.532] | ansambel +0.531 [0.472, 0.592]
+  laju - CNN           satu lari -0.014 [-0.101, 0.074] rentang ulangan [-0.021, -0.007] | ansambel -0.028 [-0.115, 0.057]
+  (laju + 13) - laju   satu lari +0.055 [-0.028, 0.140] rentang ulangan [+0.055, +0.055] | ansambel +0.055 [-0.028, 0.140]
+  porsi kelebihan tersisa, satu lari: (0.522 - 0,5) / (0.528 - 0,5) = 0.80
+  porsi kelebihan tersisa, ansambel: (0.531 - 0,5) / (0.542 - 0,5) = 0.74
+  [B 30-365 benih 0 dihitung]
+  [B 30-365 benih 1 dihitung]
+  [B 30-365 benih 2 dihitung]
+
+== B 30-365
+  AUROC CNN per ulangan (rerata benih): 0.521, 0.528, 0.508, 0.515, 0.545; per benih: 0.520, 0.533, 0.517
+  laju saja (LR) 0.615; laju berstrata (sisa di dalam kuintil) 0.537
+  CNN                  satu lari +0.523 [0.465, 0.578] rentang ulangan [+0.508, +0.545] | ansambel +0.531 [0.482, 0.584]
+  + laju sinyal        satu lari +0.084 [0.022, 0.161] rentang ulangan [+0.067, +0.097] | ansambel +0.075 [0.016, 0.143]
+  + 13 ukuran          satu lari +0.064 [-0.007, 0.148] rentang ulangan [+0.044, +0.080] | ansambel +0.055 [-0.010, 0.128]
+  + 16 ukuran          satu lari +0.064 [-0.009, 0.148] rentang ulangan [+0.043, +0.079] | ansambel +0.054 [-0.013, 0.128]
+  (laju + CNN) - laju  satu lari -0.008 [-0.029, 0.009] rentang ulangan [-0.012, -0.002] | ansambel -0.009 [-0.032, 0.007]
+  ukuran LR - CNN      satu lari +0.068 [-0.007, 0.145] rentang ulangan [+0.047, +0.083] | ansambel +0.060 [-0.010, 0.130]
+  CNN berstrata laju   satu lari +0.501 [0.442, 0.557] rentang ulangan [+0.486, +0.520] | ansambel +0.499 [0.442, 0.554]
+  laju - CNN           satu lari +0.092 [0.024, 0.162] rentang ulangan [+0.070, +0.107] | ansambel +0.084 [0.020, 0.145]
+  (laju + 13) - laju   satu lari -0.015 [-0.051, 0.017] rentang ulangan [-0.015, -0.015] | ansambel -0.015 [-0.051, 0.017]
+  porsi kelebihan tersisa, satu lari: (0.501 - 0,5) / (0.523 - 0,5) = 0.05
+  porsi kelebihan tersisa, ansambel: (0.499 - 0,5) / (0.531 - 0,5) = -0.05
+
+== Penurunan CNN A - B, 3 benih, 5 ulangan, bootstrap pasien bersama
+  1-30    A 0.628 [0.568, 0.685], B 0.528 [0.465, 0.590], A - B +0.100 [0.025, 0.176]
+  30-365  A 0.550 [0.487, 0.610], B 0.523 [0.463, 0.579], A - B +0.027 [-0.049, 0.103]
