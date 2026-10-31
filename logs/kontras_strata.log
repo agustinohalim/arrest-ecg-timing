@@ -1,0 +1,52 @@
+  [1-30 benih 0 dihitung]
+  [1-30 benih 1 dihitung]
+  [1-30 benih 2 dihitung]
+== A 1-30
+  ansambel             0.663 [0.606, 0.720]
+  ansambel berstrata   0.630 [0.567, 0.691]
+  laju                 0.613 [0.555, 0.671]
+  laju berstrata       0.502 [0.446, 0.558]
+  porsi tersisa        0.797 [0.555, 0.952]
+== B 1-30
+  ansambel             0.542 [0.480, 0.602]
+  ansambel berstrata   0.531 [0.469, 0.592]
+  laju                 0.535 [0.478, 0.592]
+  laju berstrata       0.524 [0.460, 0.587]
+  porsi tersisa        0.731 [-1.751, 2.635]
+== Penurunan A - B, 1-30
+  ansambel             +0.121 [0.060, 0.184]
+  ansambel berstrata   +0.099 [0.034, 0.167]
+  laju                 +0.077 [0.045, 0.112]
+  laju berstrata       -0.022 [-0.108, 0.063]
+  penurunan berstrata - penurunan laju +0.021 [-0.048, 0.092]
+  [30-365 benih 0 dihitung]
+  [30-365 benih 1 dihitung]
+  [30-365 benih 2 dihitung]
+== A 30-365
+  ansambel             0.572 [0.524, 0.617]
+  ansambel berstrata   0.522 [0.465, 0.574]
+  laju                 0.623 [0.574, 0.668]
+  laju berstrata       0.533 [0.482, 0.585]
+  porsi tersisa        0.302 [-1.157, 0.704]
+== B 30-365
+  ansambel             0.531 [0.478, 0.586]
+  ansambel berstrata   0.499 [0.442, 0.558]
+  laju                 0.615 [0.567, 0.662]
+  laju berstrata       0.537 [0.485, 0.586]
+  porsi tersisa        -0.195 [-9.568, 9.111]
+== Penurunan A - B, 30-365
+  ansambel             +0.041 [-0.018, 0.091]
+  ansambel berstrata   +0.024 [-0.037, 0.080]
+  laju                 +0.007 [-0.013, 0.029]
+  laju berstrata       -0.003 [-0.052, 0.034]
+  penurunan berstrata - penurunan laju +0.016 [-0.052, 0.079]
+== P
+  ansambel             0.559 [0.520, 0.595]
+  ansambel berstrata   0.530 [0.492, 0.567]
+  laju                 0.599 [0.564, 0.633]
+  laju berstrata       0.512 [0.477, 0.547]
+  porsi tersisa        0.506 [-0.354, 0.764]
+== |d| kasus lawan kontrol; laju 12SL sesudah |d| > 5 dibuang
+  A 1-30    AUROC |d| 0.495 [0.434, 0.559]; laju 12SL 0.615, sesudah buang 0.618, beda +0.003 [-0.016, 0.021]; |d| > 5: kasus 6.7%, kontrol 6.4%
+  A 30-365  AUROC |d| 0.533 [0.484, 0.582]; laju 12SL 0.621, sesudah buang 0.618, beda -0.002 [-0.019, 0.014]; |d| > 5: kasus 10.9%, kontrol 5.2%
+  P         AUROC |d| 0.519 [0.485, 0.553]; laju 12SL 0.597, sesudah buang 0.600, beda +0.003 [-0.008, 0.014]; |d| > 5: kasus 8.4%, kontrol 6.1%
