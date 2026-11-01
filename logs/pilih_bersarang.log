@@ -1,0 +1,55 @@
+  [A 1-30 benih 0 dihitung]
+  [A 1-30 benih 1 dihitung]
+  [A 1-30 benih 2 dihitung]
+
+== A 1-30
+  terpilih di dalam lipatan 0.570 [0.473, 0.673]; ansambel 0.663 [0.604, 0.717]; laju sinyal mentah 0.613 [0.553, 0.671]
+  terpilih - ansambel -0.093 [-0.198, 0.019]
+  laju mentah - ansambel -0.050 [-0.123, 0.022]
+  laju mentah - terpilih (optimisme) +0.043 [-0.066, 0.128]
+  terpilih: qrs_count 43%, ventricular_rate 29%, t_axis 17%, qt_corrected 8%, q_onset 3%
+  16 pengukuran, AUROC arah bebas: qrs_count 0.616; ventricular_rate 0.615; t_axis 0.598; atrial_rate 0.593; qt_corrected 0.591; q_onset 0.588; t_offset 0.576; p_onset 0.568; qrs_duration 0.566; p_offset 0.566; qt_interval 0.548; pr_interval 0.541; qtc_frederica 0.536; p_axis 0.529; r_axis 0.529; q_offset 0.502
+  [A 30-365 benih 0 dihitung]
+  [A 30-365 benih 1 dihitung]
+  [A 30-365 benih 2 dihitung]
+
+== A 30-365
+  terpilih di dalam lipatan 0.621 [0.502, 0.664]; ansambel 0.572 [0.526, 0.619]; laju sinyal mentah 0.623 [0.573, 0.668]
+  terpilih - ansambel +0.048 [-0.069, 0.100]
+  laju mentah - ansambel +0.050 [-0.004, 0.104]
+  laju mentah - terpilih (optimisme) +0.002 [-0.014, 0.092]
+  terpilih: ventricular_rate 100%
+  16 pengukuran, AUROC arah bebas: ventricular_rate 0.621; qrs_count 0.615; atrial_rate 0.602; qt_corrected 0.580; t_offset 0.576; qt_interval 0.567; q_onset 0.539; qrs_duration 0.529; p_axis 0.526; r_axis 0.520; qtc_frederica 0.516; t_axis 0.512; pr_interval 0.512; p_offset 0.502; p_onset 0.501; q_offset 0.500
+  [P benih 0 dihitung]
+  [P benih 1 dihitung]
+  [P benih 2 dihitung]
+
+== P
+  terpilih di dalam lipatan 0.597 [0.511, 0.631]; ansambel 0.559 [0.522, 0.596]; laju sinyal mentah 0.599 [0.563, 0.632]
+  terpilih - ansambel +0.038 [-0.051, 0.081]
+  laju mentah - ansambel +0.040 [-0.009, 0.085]
+  laju mentah - terpilih (optimisme) +0.001 [-0.010, 0.068]
+  terpilih: ventricular_rate 100%
+  16 pengukuran, AUROC arah bebas: ventricular_rate 0.597; qrs_count 0.593; atrial_rate 0.582; qt_corrected 0.572; t_offset 0.564; qt_interval 0.548; q_onset 0.547; qrs_duration 0.536; t_axis 0.536; p_axis 0.528; qtc_frederica 0.522; p_onset 0.520; r_axis 0.514; p_offset 0.511; pr_interval 0.509; q_offset 0.502
+  [B 1-30 benih 0 dihitung]
+  [B 1-30 benih 1 dihitung]
+  [B 1-30 benih 2 dihitung]
+
+== B 1-30
+  terpilih di dalam lipatan 0.538 [0.429, 0.633]; ansambel 0.542 [0.479, 0.603]; laju sinyal mentah 0.535 [0.477, 0.592]
+  terpilih - ansambel -0.004 [-0.123, 0.112]
+  laju mentah - ansambel -0.007 [-0.084, 0.073]
+  laju mentah - terpilih (optimisme) -0.003 [-0.121, 0.125]
+  terpilih: p_onset 59%, t_axis 37%, qrs_duration 3%, q_onset 1%
+  16 pengukuran, AUROC arah bebas: p_onset 0.576; t_axis 0.574; pr_interval 0.558; p_offset 0.554; qrs_duration 0.553; q_onset 0.550; p_axis 0.546; qrs_count 0.533; ventricular_rate 0.531; qt_corrected 0.530; t_offset 0.526; qtc_frederica 0.519; atrial_rate 0.513; r_axis 0.511; q_offset 0.511; qt_interval 0.508
+  [B 30-365 benih 0 dihitung]
+  [B 30-365 benih 1 dihitung]
+  [B 30-365 benih 2 dihitung]
+
+== B 30-365
+  terpilih di dalam lipatan 0.610 [0.485, 0.656]; ansambel 0.531 [0.480, 0.583]; laju sinyal mentah 0.615 [0.569, 0.661]
+  terpilih - ansambel +0.079 [-0.052, 0.138]
+  laju mentah - ansambel +0.084 [0.018, 0.145]
+  laju mentah - terpilih (optimisme) +0.005 [-0.010, 0.105]
+  terpilih: ventricular_rate 100%
+  16 pengukuran, AUROC arah bebas: ventricular_rate 0.610; qrs_count 0.605; atrial_rate 0.597; t_offset 0.577; qt_corrected 0.566; qt_interval 0.565; q_onset 0.544; qrs_duration 0.541; p_axis 0.529; r_axis 0.520; t_axis 0.512; qtc_frederica 0.509; p_offset 0.507; q_offset 0.507; p_onset 0.506; pr_interval 0.503

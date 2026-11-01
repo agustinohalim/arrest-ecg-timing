@@ -63,6 +63,7 @@ Comments and log text are in Indonesian; variable names follow the manuscript's 
 | `29_kontras_strata.py` | `kontras_strata.log` | From the saved predictions of 28: paired A − B drops in the ensemble, in its AUROC within heart-rate quintiles, and in recomputed rate; rate's floor within its own quintiles; size of the printed-minus-recomputed difference (Tables 4 and 5 text, Sections 4.2 and 4.3) |
 | `30_sebab_p.py` | `sebab_p.log` | From the saved predictions of 28: heart rate, measurements, and ensemble by arrest cause in design P, paired differences (Section 4.3) |
 | `31_interval_sinyal.py` | `interval_sinyal.log`, `interval_sinyal_ukur.log`, `interval_atenuasi.log`; failed first attempt `interval_sinyal_dwt.log`, `interval_sinyal_dwt_ukur.log` | Version 1.3.2. QRS, QT, and QTc recomputed from a 12-lead median beat, agreement with 12SL by MUSE version with a fixed validity rule, printed against recomputed measurements by arrest cause in design P, and an attenuation simulation (`--tahap atenuasi`, `interval_atenuasi.log`) (Sections 3.3, 4.3). Per-ECG measurements are written outside the repository (`ARREST_UKUR`) |
+| `32_pilih_bersarang.py` | `pilih_bersarang.log` | Version 1.3.3: the single best of 16 measurements chosen inside each training fold and in each bootstrap draw, compared with the CNN ensemble |
 
 Section, table, and figure numbers for scripts 20–31 refer to the current manuscript (version 1.3.2 of this
 repository; its Figure 2 is `Gambar3_auroc_jiki`); those for scripts 13–19 refer to the version of 1.2.x and
