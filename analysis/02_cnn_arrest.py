@@ -121,29 +121,38 @@ class Jaringan(nn.Module):
         return self.kepala(self.fitur(x).mean(dim=2)).squeeze(1)
 
 
+# Perangkat pelatihan: bawaan CPU (semua hasil sebelum 16 Nov 2026). ARREST_PERANGKAT=cuda hanya di venv-gpu; satu sampel
+# satu perangkat (skrip 33: P di CPU, B di GPU). Bobot awal dan urutan batch tetap dari generator CPU, jadi yang berbeda
+# hanya aritmetika dan dropout; hasil GPU tidak identik bit dengan CPU.
+PERANGKAT = torch.device(os.environ.get('ARREST_PERANGKAT', 'cpu'))
+if PERANGKAT.type == 'cuda':
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+
+
 def latih_prediksi(Xtr, ytr, Xte, benih):
     torch.manual_seed(benih)
     sd = Xtr.std() + 1e-6
     # dibagi sd per batch, bukan seluruh larik sekaligus: satu salinan lebih sedikit di memori
     xt, yt = torch.from_numpy(Xtr), torch.tensor(ytr, dtype=torch.float32)
-    m = Jaringan()
+    m = Jaringan().to(PERANGKAT)
     opt = torch.optim.Adam(m.parameters(), lr=1e-3)
     pos = ytr.mean()
-    loss = nn.BCEWithLogitsLoss(pos_weight=torch.tensor((1 - pos) / pos, dtype=torch.float32))
+    loss = nn.BCEWithLogitsLoss(pos_weight=torch.tensor((1 - pos) / pos, dtype=torch.float32, device=PERANGKAT))
     for _ in range(EPOCH):
         m.train()
         perm = torch.randperm(len(yt))
         for i in range(0, len(yt), BATCH):
             b = perm[i:i + BATCH]
             opt.zero_grad()
-            loss(m(xt[b] / sd), yt[b]).backward()
+            loss(m(xt[b].to(PERANGKAT) / sd), yt[b].to(PERANGKAT)).backward()
             opt.step()
     m.eval()
     out = []
     with torch.no_grad():
         xe = torch.from_numpy(Xte)
         for i in range(0, len(xe), 512):
-            out.append(torch.sigmoid(m(xe[i:i + 512] / sd)).numpy())
+            out.append(torch.sigmoid(m(xe[i:i + 512].to(PERANGKAT) / sd)).cpu().numpy())
     return np.concatenate(out)
 
 

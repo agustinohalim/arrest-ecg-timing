@@ -1,8 +1,8 @@
 # arrest-ecg-timing
 
 Analysis code for the manuscript *Recording Time and Heart Rate in Cardiac Arrest Prediction: Six Checks of What a
-Case–Control CNN Learned* (Halim, Lukman, Andika, Macnamara, Erwin; submitted). Version 1.3.2 accompanies it;
-versions 1.0.0 to 1.3.1 accompanied earlier versions of the manuscript.
+Case–Control CNN Learned* (Halim, Lukman, Andika, Macnamara, Erwin; under revision). Version 1.3.4 accompanies its
+revised version; versions 1.0.0 to 1.3.3 accompanied earlier versions of the manuscript.
 
 On the Nightingale Open Science dataset arrest-ntuh-ecg (emergency department of National Taiwan
 University Hospital), the scripts replicate a published case–control design for predicting cardiac
@@ -19,7 +19,9 @@ The scripts print aggregate results only; the logs in `logs/` are those outputs.
 Python 3.12 with NumPy 2.5.2, pandas 3.0.5, scikit-learn 1.9.0, PyTorch 2.14.0 (CPU), and
 matplotlib 3.11.1 for the figures, and SciPy 1.18.1. MiniRocket (scripts 20, 22, 26) runs in a separate
 environment with aeon 1.6.0 (numpy 2.3.5, pandas 3.0.5); the tuned CNN (script 20, `--lengan cnn`) ran on a GPU
-environment with pandas 2.3.3. Script 31 `--tahap ukur` runs in an environment with NeuroKit2 0.2.13 and pandas 2.3.3. Point the scripts to the data with the environment variable
+environment with pandas 2.3.3. Script 31 `--tahap ukur` runs in an environment with NeuroKit2 0.2.13 and pandas 2.3.3. Script 33 trains on the CPU (designs A) or, with `ARREST_PERANGKAT=cuda` and `--dari-larik`, on a GPU
+environment (PyTorch 2.14.0+cu130, pandas 2.3.3; designs B and P) from arrays prepared by `--tahap siapkan` in the main
+environment, because the matched sample of design B 30–365 days is not row-identical under pandas 2.3.3. Point the scripts to the data with the environment variable
 `NGSCI_DATA` (the folder that contains `arrest-ntuh-ecg/v1`); the default is `C:/Data/Nightingale`.
 Some scripts write out-of-fold predictions to `arrest-ntuh-ecg/turunan/` next to the data, never into
 this repository.
@@ -64,6 +66,7 @@ Comments and log text are in Indonesian; variable names follow the manuscript's 
 | `30_sebab_p.py` | `sebab_p.log` | From the saved predictions of 28: heart rate, measurements, and ensemble by arrest cause in design P, paired differences (Section 4.3) |
 | `31_interval_sinyal.py` | `interval_sinyal.log`, `interval_sinyal_ukur.log`, `interval_atenuasi.log`; failed first attempt `interval_sinyal_dwt.log`, `interval_sinyal_dwt_ukur.log` | Version 1.3.2. QRS, QT, and QTc recomputed from a 12-lead median beat, agreement with 12SL by MUSE version with a fixed validity rule, printed against recomputed measurements by arrest cause in design P, and an attenuation simulation (`--tahap atenuasi`, `interval_atenuasi.log`) (Sections 3.3, 4.3). Per-ECG measurements are written outside the repository (`ARREST_UKUR`) |
 | `32_pilih_bersarang.py` | `pilih_bersarang.log` | Version 1.3.3: the single best of 16 measurements chosen inside each training fold and in each bootstrap draw, compared with the CNN ensemble |
+| `33_tambahan_bersarang.py` | `tambahan_bersarang_latih_a130.log`, `tambahan_bersarang_a130.log` (design A 1–30 days first), `tambahan_bersarang_latih.log` (A 30–365 days; its last line is a design P run on the CPU that was stopped and discarded when P moved to the GPU), `tambahan_bersarang_siapkan_b.log`, `tambahan_bersarang_siapkan_p.log`, `tambahan_bersarang_latih_b_gpu.log`, `tambahan_bersarang_latih_p_gpu.log`, `tambahan_bersarang.log` (all samples) | Version 1.3.4, answering review: increments in both directions with nested cross-validation (one shared patient-grouped outer split; second-stage logistic regression fitted on logits from CNNs retrained on an inner split of each outer training fold). Table 4 increments and heart rate alone, Section 3.3 |
 
 Section, table, and figure numbers for scripts 20–31 refer to the current manuscript (version 1.3.2 of this
 repository; its Figure 2 is `Gambar3_auroc_jiki`); those for scripts 13–19 refer to the version of 1.2.x and
@@ -76,7 +79,7 @@ Run each from `analysis/`, for example:
 python -u 09_uji_sebab.py > ../logs/uji_sebab.log
 ```
 
-CNN training on CPU is not fully deterministic, so a rerun reproduces CNN values to about the second
+CNN training is not fully deterministic, and CPU and GPU runs differ in arithmetic, so a rerun reproduces CNN values to about the second
 decimal; tree models and matching are seeded and reproduce exactly.
 
 ## Licence

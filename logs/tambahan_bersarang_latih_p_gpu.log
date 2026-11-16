@@ -1,0 +1,16 @@
+perangkat: cuda
+  P benih 0 ulangan 0 selesai, AUROC uji 0.539
+  P benih 0 ulangan 1 selesai, AUROC uji 0.524
+  P benih 0 ulangan 2 selesai, AUROC uji 0.521
+  P benih 0 ulangan 3 selesai, AUROC uji 0.520
+  P benih 0 ulangan 4 selesai, AUROC uji 0.512
+  P benih 1 ulangan 0 selesai, AUROC uji 0.525
+  P benih 1 ulangan 1 selesai, AUROC uji 0.540
+  P benih 1 ulangan 2 selesai, AUROC uji 0.524
+  P benih 1 ulangan 3 selesai, AUROC uji 0.511
+  P benih 1 ulangan 4 selesai, AUROC uji 0.541
+  P benih 2 ulangan 0 selesai, AUROC uji 0.520
+  P benih 2 ulangan 1 selesai, AUROC uji 0.541
+  P benih 2 ulangan 2 selesai, AUROC uji 0.526
+  P benih 2 ulangan 3 selesai, AUROC uji 0.552
+  P benih 2 ulangan 4 selesai, AUROC uji 0.529
